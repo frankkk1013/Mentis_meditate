@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MentisMeditateApp: App {
+    var UIState: UIStateModel = UIStateModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            SnapCarousel(UIState: UIState)
         }
     }
 }
