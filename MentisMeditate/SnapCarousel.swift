@@ -1,5 +1,80 @@
 import SwiftUI
 var UIState : UIStateModel = UIStateModel()
+
+
+struct SheetView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                Image("Image")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 313, height: 262)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .frame(width: 313, height: 262)
+                
+                HStack {
+                //hurry
+                    Text("hurry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+
+                //worry
+                    Text("worry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+
+                //anxiety
+                    Text("anxiety").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+
+                //stress
+                    Text("stress").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+
+                //exam
+                    Text("exam").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+
+                //Rectangle 23
+                    RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                    .frame(width: 45, height: 20)
+
+                //Rectangle 22
+                    RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                    .frame(width: 45, height: 20)
+
+                //Rectangle 21
+                    RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                    .frame(width: 45, height: 20)
+
+                //Rectangle 20
+                    RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                    .frame(width: 45, height: 20)
+
+                //Rectangle 19
+                    RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                    .frame(width: 45, height: 20)
+                    
+                    
+                }.frame(alignment: .leading)
+                
+                //Lorem ipsum dolor sit amet...
+                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua").font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
+            }
+            
+            Button("Press to dismiss") {
+                dismiss()
+            }
+            .font(.title)
+            .padding()
+            .background(Color.black)
+            .navigationBarTitle("EXAWER", displayMode: .large)
+        }
+        
+    }
+}
+
 struct SnapCarousel: View {
     
     @State var UIState: UIStateModel
@@ -138,7 +213,7 @@ struct Canvas<Content : View> : View {
 }
 
 struct Item<Content: View>: View {
-    
+    @State private var showingSheet = false
     @EnvironmentObject var UIState: UIStateModel
     
     let cardWidth: CGFloat
@@ -163,7 +238,11 @@ struct Item<Content: View>: View {
     var body: some View {
         content
             .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                                                                                        .fill(Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
+                                                                                                                                        .fill(Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1)))).onTapGesture {
+                showingSheet.toggle()
+            }.sheet(isPresented: $showingSheet) {
+                SheetView()
+            }
     }
 }
 
