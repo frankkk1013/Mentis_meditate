@@ -10,7 +10,7 @@ struct SnapCarousel: View {
         let cardHeight: CGFloat = 450
         
         let items = [
-            Card(id: 0, name: "EXOWER"),
+            Card(id: 0, name: "EXAWER"),
             Card(id: 1, name: "RISE AND SHINE"),
             Card(id: 2, name: "Lets"),
             Card(id: 3, name: "Go")
@@ -107,13 +107,13 @@ struct Carousel<Items : View> : View {
         }.onEnded { value in
             self.UIState.screenDrag = 0
             
-            if (value.translation.width < -50) {
+            if (value.translation.width < -50) &&  self.UIState.activeCard < Int(numberOfItems) - 1 {
                 self.UIState.activeCard = self.UIState.activeCard + 1
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
             }
-            
-            if (value.translation.width > 50) {
+                   
+            if (value.translation.width > 50) && self.UIState.activeCard > 0 {
                 self.UIState.activeCard = self.UIState.activeCard - 1
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
@@ -163,7 +163,7 @@ struct Item<Content: View>: View {
     var body: some View {
         content
             .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                        .fill(Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
+                                                                                                                                                                                                        .fill(Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
     }
 }
 
