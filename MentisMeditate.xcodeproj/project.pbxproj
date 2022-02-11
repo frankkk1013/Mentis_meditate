@@ -11,6 +11,7 @@
 		FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC627B65C4E0028D07B /* ContentView.swift */; };
 		FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BC827B65C4F0028D07B /* Assets.xcassets */; };
 		FB992BCC27B65C4F0028D07B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BCB27B65C4F0028D07B /* Preview Assets.xcassets */; };
+		FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BDD27B6636B0028D07B /* SnapCarousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FB992BC627B65C4E0028D07B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB992BC827B65C4F0028D07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB992BCB27B65C4F0028D07B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB992BDD27B6636B0028D07B /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */,
+				FB992BDD27B6636B0028D07B /* SnapCarousel.swift */,
 				FB992BC627B65C4E0028D07B /* ContentView.swift */,
 				FB992BC827B65C4F0028D07B /* Assets.xcassets */,
 				FB992BCA27B65C4F0028D07B /* Preview Content */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */,
 				FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */,
 				FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */,
 			);
