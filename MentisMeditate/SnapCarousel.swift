@@ -131,10 +131,10 @@ struct SnapCarousel: View {
         let cardHeight: CGFloat = 450
         
         let items = [
-            Card(id: 0, name: "EXAWER"),
-            Card(id: 1, name: "RISE AND SHINE"),
-            Card(id: 2, name: "Lets"),
-            Card(id: 3, name: "Go")
+            Card_Carousel(id: 0, name: "EXAWER"),
+            Card_Carousel(id: 1, name: "RISE AND SHINE"),
+            Card_Carousel(id: 2, name: "Lets"),
+            Card_Carousel(id: 3, name: "Go")
         ]
         
         return Canvas {
@@ -166,7 +166,7 @@ struct SnapCarousel: View {
     }
 }
 
-struct Card: Decodable, Hashable, Identifiable {
+struct Card_Carousel: Decodable, Hashable, Identifiable {
     var id: Int
     var name: String = ""
 }

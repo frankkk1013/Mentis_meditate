@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB612E2227BBD0730097C63C /* Background_music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2127BBD0730097C63C /* Background_music.swift */; };
+		FB612E2627BBD0D50097C63C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2527BBD0D50097C63C /* CardView.swift */; };
+		FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2727BBD0EF0097C63C /* DetailTextView.swift */; };
+		FB612E2A27BBD0FF0097C63C /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2927BBD0FF0097C63C /* Source.swift */; };
+		FB612E2C27BBD1360097C63C /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2B27BBD1360097C63C /* Journey.swift */; };
+		FB612E2F27BBD1F50097C63C /* StepperView in Frameworks */ = {isa = PBXBuildFile; productRef = FB612E2E27BBD1F50097C63C /* StepperView */; };
 		FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */; };
 		FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC627B65C4E0028D07B /* ContentView.swift */; };
 		FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BC827B65C4F0028D07B /* Assets.xcassets */; };
@@ -16,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB612E2127BBD0730097C63C /* Background_music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_music.swift; sourceTree = "<group>"; };
+		FB612E2527BBD0D50097C63C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FB612E2727BBD0EF0097C63C /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
+		FB612E2927BBD0FF0097C63C /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		FB612E2B27BBD1360097C63C /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		FB992BC127B65C4E0028D07B /* MentisMeditate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentisMeditate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentisMeditateApp.swift; sourceTree = "<group>"; };
 		FB992BC627B65C4E0028D07B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,12 +41,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB612E2F27BBD1F50097C63C /* StepperView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB612E2027BBD04B0097C63C /* Background_Music1 */ = {
+			isa = PBXGroup;
+			children = (
+				FB612E2127BBD0730097C63C /* Background_music.swift */,
+			);
+			path = Background_Music1;
+			sourceTree = "<group>";
+		};
+		FB612E2427BBD0BC0097C63C /* Journey_content */ = {
+			isa = PBXGroup;
+			children = (
+				FB612E2527BBD0D50097C63C /* CardView.swift */,
+				FB612E2727BBD0EF0097C63C /* DetailTextView.swift */,
+				FB612E2927BBD0FF0097C63C /* Source.swift */,
+			);
+			path = Journey_content;
+			sourceTree = "<group>";
+		};
 		FB992BB827B65C4E0028D07B = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +85,11 @@
 		FB992BC327B65C4E0028D07B /* MentisMeditate */ = {
 			isa = PBXGroup;
 			children = (
+				FB612E2427BBD0BC0097C63C /* Journey_content */,
+				FB612E2027BBD04B0097C63C /* Background_Music1 */,
 				FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */,
 				FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */,
+				FB612E2B27BBD1360097C63C /* Journey.swift */,
 				FB992BDD27B6636B0028D07B /* SnapCarousel.swift */,
 				FB992BC627B65C4E0028D07B /* ContentView.swift */,
 				FB992BC827B65C4F0028D07B /* Assets.xcassets */,
@@ -89,6 +122,9 @@
 			dependencies = (
 			);
 			name = MentisMeditate;
+			packageProductDependencies = (
+				FB612E2E27BBD1F50097C63C /* StepperView */,
+			);
 			productName = MentisMeditate;
 			productReference = FB992BC127B65C4E0028D07B /* MentisMeditate.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +153,9 @@
 				Base,
 			);
 			mainGroup = FB992BB827B65C4E0028D07B;
+			packageReferences = (
+				FB612E2D27BBD1F50097C63C /* XCRemoteSwiftPackageReference "StepperView" */,
+			);
 			productRefGroup = FB992BC227B65C4E0028D07B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,8 +184,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */,
+				FB612E2227BBD0730097C63C /* Background_music.swift in Sources */,
 				FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */,
+				FB612E2A27BBD0FF0097C63C /* Source.swift in Sources */,
+				FB612E2C27BBD1360097C63C /* Journey.swift in Sources */,
 				FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */,
+				FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */,
+				FB612E2627BBD0D50097C63C /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB612E2D27BBD1F50097C63C /* XCRemoteSwiftPackageReference "StepperView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/badrinathvm/StepperView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB612E2E27BBD1F50097C63C /* StepperView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB612E2D27BBD1F50097C63C /* XCRemoteSwiftPackageReference "StepperView" */;
+			productName = StepperView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB992BB927B65C4E0028D07B /* Project object */;
 }
