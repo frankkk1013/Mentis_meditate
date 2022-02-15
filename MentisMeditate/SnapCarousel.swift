@@ -4,74 +4,120 @@ var UIState : UIStateModel = UIStateModel()
 
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
+    
     
     var body: some View {
         NavigationView{
+            
             VStack{
-                Image("Image")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 313, height: 262)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .frame(width: 313, height: 262)
+                Image("exawer")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 360, height: 262)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .frame(width: 313, height: 262)
                 
                 HStack {
-                //hurry
-                    Text("hurry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
-
-                //worry
-                    Text("worry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
-
-                //anxiety
-                    Text("anxiety").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
-
-                //stress
-                    Text("stress").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
-
-                //exam
-                    Text("exam").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
-
-                //Rectangle 23
-                    RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                    .frame(width: 45, height: 20)
-
-                //Rectangle 22
-                    RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                    .frame(width: 45, height: 20)
-
-                //Rectangle 21
-                    RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                    .frame(width: 45, height: 20)
-
-                //Rectangle 20
-                    RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                    .frame(width: 45, height: 20)
-
-                //Rectangle 19
-                    RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                    .frame(width: 45, height: 20)
                     
+                    ZStack {
+                        //hurry
+                        //Rectangle 19
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                            .frame(width: 45, height: 20)
+                        Text("hurry").font(.system(size: 10, weight: .semibold))
+                            .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
+                        
+                    }
+                    ZStack {
+                        //worry
+                        //Rectangle 20
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                            .frame(width: 45, height: 20)
+                        
+                        Text("worry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                    }
+                    
+                    //anxiety
+                    ZStack {
+                        //Rectangle 21
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                            .frame(width: 45, height: 20)
+                        Text("anxiety").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                    }
+                    
+                    //stress
+                    ZStack {
+                        //Rectangle 22
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                            .frame(width: 45, height: 20)
+                        Text("stress").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                    }
+                    
+                    //exam
+                    ZStack {
+                        //Rectangle 23
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
+                            .frame(width: 45, height: 20)
+                        Text("exam").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                    }
                     
                 }.frame(alignment: .leading)
+                    .padding()
+                
+                
                 
                 //Lorem ipsum dolor sit amet...
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua").font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
+                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
+                    .frame(width: 360)
+                    .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
+                    .padding()
+                
+                Button (action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                    Text("START")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.white)
+                        .frame(width: 358, height: 50)
+                        .background((Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
+                        .cornerRadius(13)
+                    
+                }
+                .padding()
+               
+            }
+            .navigationTitle("Exawer")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Edit button was tapped")
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                    }.foregroundColor(.indigo)
+                }
+                
+                
+                
+                
+                
             }
             
-            Button("Press to dismiss") {
-                dismiss()
-            }
-            .font(.title)
-            .padding()
-            .background(Color.black)
-            .navigationBarTitle("EXAWER", displayMode: .large)
+            
+            
+            
+            //            Button (action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+            //                Image(systemName: "chevron.backward")
+            //                    .foregroundColor(Color(.systemIndigo))
+            //            }
+            
+            
+            
         }
-        
     }
 }
 
@@ -141,12 +187,12 @@ struct Carousel<Items : View> : View {
     @GestureState var isDetectingLongPress = false
     
     @EnvironmentObject var UIState: UIStateModel
-        
+    
     @inlinable public init(
-        numberOfItems: CGFloat,
-        spacing: CGFloat,
-        widthOfHiddenCards: CGFloat,
-        @ViewBuilder _ items: () -> Items) {
+numberOfItems: CGFloat,
+spacing: CGFloat,
+widthOfHiddenCards: CGFloat,
+    @ViewBuilder _ items: () -> Items) {
         
         self.items = items()
         self.numberOfItems = numberOfItems
@@ -162,10 +208,10 @@ struct Carousel<Items : View> : View {
         let xOffsetToShift = (totalCanvasWidth - UIScreen.main.bounds.width) / 2
         let leftPadding = widthOfHiddenCards + spacing
         let totalMovement = cardWidth + spacing
-                
+        
         let activeOffset = xOffsetToShift + (leftPadding) - (totalMovement * CGFloat(UIState.activeCard))
         let nextOffset = xOffsetToShift + (leftPadding) - (totalMovement * CGFloat(UIState.activeCard) + 1)
-
+        
         var calcOffset = Float(activeOffset)
         
         if (calcOffset != Float(nextOffset)) {
@@ -187,7 +233,7 @@ struct Carousel<Items : View> : View {
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
             }
-                   
+            
             if (value.translation.width > 50) && self.UIState.activeCard > 0 {
                 self.UIState.activeCard = self.UIState.activeCard - 1
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
@@ -218,23 +264,23 @@ struct Item<Content: View>: View {
     
     let cardWidth: CGFloat
     let cardHeight: CGFloat
-
+    
     var _id: Int
     var content: Content
-
+    
     @inlinable public init(
-        _id: Int,
-        spacing: CGFloat,
-        widthOfHiddenCards: CGFloat,
-        cardHeight: CGFloat,
-        @ViewBuilder _ content: () -> Content
+_id: Int,
+spacing: CGFloat,
+widthOfHiddenCards: CGFloat,
+cardHeight: CGFloat,
+    @ViewBuilder _ content: () -> Content
     ) {
         self.content = content()
         self.cardWidth = UIScreen.main.bounds.width - (widthOfHiddenCards*2) - (spacing*2) //279
         self.cardHeight = cardHeight
         self._id = _id
     }
-
+    
     var body: some View {
         content
             .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
