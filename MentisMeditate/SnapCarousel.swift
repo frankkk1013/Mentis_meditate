@@ -5,6 +5,7 @@ var UIState : UIStateModel = UIStateModel()
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.presentationMode) var presentationMode
+    var keywords = ["hurry", "worry", "anxiety", "stress", "exam"]
     
     
     var body: some View {
@@ -17,16 +18,17 @@ struct SheetView: View {
                     .frame(width: 360, height: 262)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .frame(width: 313, height: 262)
+            
                 
-                HStack {
+                HStack(spacing: 25) {
                     
                     ZStack {
                         //hurry
                         //Rectangle 19
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                            .frame(width: 45, height: 20)
-                        Text("hurry").font(.system(size: 10, weight: .semibold))
+                            .frame(width: CGFloat(keywords[0].count + 50) , height: 20)
+                        Text(keywords[0]).font(.system(size: 11, weight: .semibold))
                             .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
                         
                     }
@@ -35,9 +37,9 @@ struct SheetView: View {
                         //Rectangle 20
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                            .frame(width: 45, height: 20)
+                            .frame(width: CGFloat(keywords[1].count + 50), height: 20)
                         
-                        Text("worry").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                        Text(keywords[1]).font(.system(size: 11, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                     }
                     
                     //anxiety
@@ -45,8 +47,9 @@ struct SheetView: View {
                         //Rectangle 21
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                            .frame(width: 45, height: 20)
-                        Text("anxiety").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                            .frame(width: CGFloat(keywords[2].count + 50), height: 20)
+                            
+                        Text(keywords[2]).font(.system(size: 11, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                     }
                     
                     //stress
@@ -54,8 +57,8 @@ struct SheetView: View {
                         //Rectangle 22
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                            .frame(width: 45, height: 20)
-                        Text("stress").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                            .frame(width: CGFloat(keywords[3].count + 50), height: 20)
+                        Text(keywords[3]).font(.system(size: 11, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                     }
                     
                     //exam
@@ -63,8 +66,8 @@ struct SheetView: View {
                         //Rectangle 23
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color(#colorLiteral(red: 0.7686274647712708, green: 0.7686274647712708, blue: 0.7686274647712708, alpha: 1)))
-                            .frame(width: 45, height: 20)
-                        Text("exam").font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                            .frame(width: CGFloat(keywords[4].count + 50), height: 20)
+                        Text(keywords[4]).font(.system(size: 10, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                     }
                     
                 }.frame(alignment: .leading)
@@ -73,7 +76,7 @@ struct SheetView: View {
                 
                 
                 //Lorem ipsum dolor sit amet...
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
+                Text("Are you struggling with your next exam? This is the perfect path for you for being motivated and focused enough to face your challenge!")
                     .frame(width: 360)
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
@@ -84,9 +87,9 @@ struct SheetView: View {
                         .fontWeight(.medium)
                         .foregroundColor(Color.white)
                         .frame(width: 358, height: 50)
-                        .background((Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
+                        .background((Color.indigo))
                         .cornerRadius(13)
-                    
+//                        .background((Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
                 }
                 .padding()
                
