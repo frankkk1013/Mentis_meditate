@@ -44,8 +44,7 @@ struct Journey: View {
                 //                        .font(.system(size: 30, weight: .bold, design: .rounded))
                 
                 
-                Text("Stati")
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                Progress()
                     .tabItem {
                         Image(systemName: "scale.3d")
                         Text("Statistics")
