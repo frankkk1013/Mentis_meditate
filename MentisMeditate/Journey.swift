@@ -26,13 +26,13 @@ struct Journey: View {
                         .padding(.bottom, -10)
                     
                     VStack(alignment:.leading){
-                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("Image"), briefSummary: "idk", description: "boh")
+                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("luna"), briefSummary: "idk", description: "SENSE DRILL")
                             .environmentObject(self.control)
                         
                     }.padding()
                 }.tabItem {
                     Image(systemName: "leaf.fill")
-                    Text("Home")
+                    Text("Journey")
                 }
                 
                 
