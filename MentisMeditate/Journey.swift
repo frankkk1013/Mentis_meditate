@@ -20,47 +20,47 @@ struct Journey: View {
         VStack{
             TabView{
                 
-                    ScrollView{
-                        TopMenu(isProfileShow: $isProfileShow)
-                            .padding()
-                            .padding(.bottom, -10)
-                        
-                        VStack(alignment:.leading){
-                            CardView(subtitle: "hello", title: "prova", backgroundImage: Image("Image"), briefSummary: "idk", description: "boh")
-                                .environmentObject(self.control)
-                            
-                        }.padding()
-                    }.tabItem {
-                        Image(systemName: "leaf.fill")
-                        Text("Home")
-                    }
+                ScrollView{
+                    TopMenu(isProfileShow: $isProfileShow)
+                        .padding()
+                        .padding(.bottom, -10)
                     
+                    VStack(alignment:.leading){
+                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("Image"), briefSummary: "idk", description: "boh")
+                            .environmentObject(self.control)
                         
-
-                    Text("Background Music")
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                        .tabItem {
-                            Image(systemName: "headphones")
-                            Text("Sounds")
-                        }
-
-                    Text("Stati")
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                        .tabItem {
-                            Image(systemName: "scale.3d")
-                            Text("Statistics")
-                        }
+                    }.padding()
+                }.tabItem {
+                    Image(systemName: "leaf.fill")
+                    Text("Home")
+                }
                 
                 
-
+                Background_music().tabItem {
+                    Image(systemName: "headphones")
+                    Text("Sounds")
+                }
+                //                    Text("Background Music")
+                //                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                
+                
+                Text("Stati")
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .tabItem {
+                        Image(systemName: "scale.3d")
+                        Text("Statistics")
+                    }
+                
+                
+                
                 
             }
-                        
-//            TabView{
-//
-//            }
+            
+            //            TabView{
+            //
+            //            }
         }
-
+        
         
         
         
