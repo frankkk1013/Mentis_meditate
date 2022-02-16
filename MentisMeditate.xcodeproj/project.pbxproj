@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78529E5827BCF442001F241E /* Med_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78529E5727BCF442001F241E /* Med_settings.swift */; };
 		FB612E2227BBD0730097C63C /* Background_music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2127BBD0730097C63C /* Background_music.swift */; };
 		FB612E2627BBD0D50097C63C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2527BBD0D50097C63C /* CardView.swift */; };
 		FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2727BBD0EF0097C63C /* DetailTextView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78529E5727BCF442001F241E /* Med_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_settings.swift; sourceTree = "<group>"; };
 		FB612E2127BBD0730097C63C /* Background_music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_music.swift; sourceTree = "<group>"; };
 		FB612E2527BBD0D50097C63C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FB612E2727BBD0EF0097C63C /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78529E5627BCF425001F241E /* med_settings */ = {
+			isa = PBXGroup;
+			children = (
+				78529E5727BCF442001F241E /* Med_settings.swift */,
+			);
+			path = med_settings;
+			sourceTree = "<group>";
+		};
 		FB612E2027BBD04B0097C63C /* Background_Music1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		FB992BC327B65C4E0028D07B /* MentisMeditate */ = {
 			isa = PBXGroup;
 			children = (
+				78529E5627BCF425001F241E /* med_settings */,
 				FB612E2427BBD0BC0097C63C /* Journey_content */,
 				FB612E2027BBD04B0097C63C /* Background_Music1 */,
 				FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */,
@@ -191,6 +202,7 @@
 				FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */,
 				FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */,
 				FB612E2627BBD0D50097C63C /* CardView.swift in Sources */,
+				78529E5827BCF442001F241E /* Med_settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
