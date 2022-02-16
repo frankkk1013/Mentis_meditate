@@ -114,6 +114,7 @@ struct CardInnerView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
                             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                            .opacity(0.8)
                     )
                     .offset(y: self.translation.height)
                 
@@ -152,15 +153,15 @@ struct TopView: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(self.subtitle)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                            .lineLimit(1)
+                        Spacer()
+//                        Text(self.subtitle)
+//                            .font(.caption)
+//                            .foregroundColor(.gray)
+//                            .lineLimit(1)
                         
                         Text(self.title)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
+                            .font(.system(size: 40, weight: .heavy)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                            .lineLimit(3)
                     }
                     
                     Spacer()
@@ -176,10 +177,28 @@ struct TopView: View {
                         .foregroundColor(.white)
                         .font(.caption)
                         .lineLimit(3)
-                    
                     Spacer()
+                    
+                    Button {
+                        print("Button was tapped")
+                    } label: {
+                        Text("Tap me!")
+                            .padding()
+                            .foregroundColor(.indigo)
+                            .font(.footnote)
+                            
+                            
+                            
+                        
+                    }.foregroundColor(.white)
+                        .background(Color.white)
+                        .cornerRadius(40)
+                    
+                    
                 }
                 .padding()
+                .background(.indigo)
+                
             }
         }
     }
