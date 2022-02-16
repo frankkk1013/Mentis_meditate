@@ -80,18 +80,26 @@ struct SheetView: View {
                     .frame(width: 360)
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
-                
-                Button (action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
-                    Text("START")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.white)
-                        .frame(width: 358, height: 50)
-                        .background((Color.indigo))
-                        .cornerRadius(13)
-//                        .background((Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
-                }
-                .padding()
+                NavigationLink("ADD", destination: Journey() )
+                    .font(.title3)
+                  
+                    .foregroundColor(Color.white)
+                    .frame(width: 358, height: 50)
+                    .background((Color.indigo))
+                    .cornerRadius(13)
+//                Button (action: {
+//                    Journey()
+//                }){
+//                    Text("ADD")
+//                        .font(.title3)
+//                        .fontWeight(.medium)
+//                        .foregroundColor(Color.white)
+//                        .frame(width: 358, height: 50)
+//                        .background((Color.indigo))
+//                        .cornerRadius(13)
+////                        .background((Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1))))
+//                }
+//                .padding()
                
             }
             .navigationTitle("Exawer")
