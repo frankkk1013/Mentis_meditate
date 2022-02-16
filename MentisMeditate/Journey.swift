@@ -26,7 +26,7 @@ struct Journey: View {
                         .padding(.bottom, -10)
                     
                     VStack(alignment:.leading){
-                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("luna"), briefSummary: "idk", description: "SENSE DRILL")
+                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("luna"), briefSummary: "SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
                             .environmentObject(self.control)
                         
                     }.padding()
