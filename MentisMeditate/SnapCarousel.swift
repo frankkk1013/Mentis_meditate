@@ -83,7 +83,7 @@ struct SheetView: View {
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
                 
-                NavigationLink("ADD", destination: Journey() )
+                NavigationLink("Add", destination: Journey() )
                     .font(.title3)
                   
                     .foregroundColor(Color.white)

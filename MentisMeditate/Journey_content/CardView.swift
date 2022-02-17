@@ -185,9 +185,9 @@ struct TopView: View {
                     }
                     Spacer()
                     Button {
-                        print("Button was tapped")
+                    
                     } label: {
-                        Text("Tap me!")
+                        Text("Start")
                             .padding()
                             .foregroundColor(.indigo)
                             .font(.footnote)
@@ -197,7 +197,7 @@ struct TopView: View {
                         
                     }.foregroundColor(.white)
                         .background(Color.white)
-                        .cornerRadius(40)
+                        .cornerRadius(17)
                     
                     
                 }
@@ -263,10 +263,9 @@ struct ExpandableView: View {
                     .bold()
                 Spacer()
                 ZStack{
-                    Menu("no voice"){
-                    Button("voice", action: placeOrder)
-                    Button("no voice", action: adjustOrder)
-
+                    Menu("Voice"){
+                    Button("Voice", action: placeOrder)
+                    Button("No voice", action: adjustOrder)
                 }.background( Rectangle()
                                 .frame(width:95, height: 50)
                                 .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
