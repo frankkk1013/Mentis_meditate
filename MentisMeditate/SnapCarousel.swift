@@ -2,17 +2,19 @@ import SwiftUI
 var UIState : UIStateModel = UIStateModel()
 
 
+
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.presentationMode) var presentationMode
     var keywords = ["hurry", "worry", "anxiety", "stress", "exam"]
+    @State var nameCard : String
     
     
     var body: some View {
         NavigationView{
             
             VStack{
-                Image("exawer")
+                Image(nameCard)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 360, height: 262)
@@ -80,6 +82,7 @@ struct SheetView: View {
                     .frame(width: 360)
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
+                
                 NavigationLink("ADD", destination: Journey() )
                     .font(.title3)
                   
@@ -102,11 +105,11 @@ struct SheetView: View {
 //                .padding()
                
             }
-            .navigationTitle("Exawer")
+            .navigationTitle(nameCard)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        print("Edit button was tapped")
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Image(systemName: "chevron.backward")
                     }.foregroundColor(.indigo)
@@ -130,26 +133,30 @@ struct SheetView: View {
             
         }
     }
+    
+   
 }
 
 struct SnapCarousel: View {
     
     @State var UIState: UIStateModel
     
+    
     var body: some View {
         let spacing: CGFloat = 16
         let widthOfHiddenCards: CGFloat = 32 /// UIScreen.main.bounds.width - 10
         let cardHeight: CGFloat = 450
-        
         let items = [
-            Card_Carousel(id: 0, name: "EXAWER"),
-            Card_Carousel(id: 1, name: "RISE AND SHINE"),
-            Card_Carousel(id: 2, name: "Lets"),
-            Card_Carousel(id: 3, name: "Go")
+            Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 1, name: "RISE AND SHINE", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 2, name: "Lets", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 3, name: "Go", cardColor: "carousel_violet", motto: "Train this power for your exams!")
         ]
         
+        
+        
         return Canvas {
-            /// TODO: find a way to avoid passing same arguments to Carousel and Item
+            
             
             Carousel(
                 numberOfItems: CGFloat(items.count),
@@ -157,13 +164,32 @@ struct SnapCarousel: View {
                 widthOfHiddenCards: widthOfHiddenCards
             ) {
                 ForEach(items, id: \.self.id) { item in
+                    
                     Item(
                         _id: Int(item.id),
                         spacing: spacing,
                         widthOfHiddenCards: widthOfHiddenCards,
-                        cardHeight: cardHeight
+                        cardHeight: cardHeight,
+                        cardColor: item.cardColor,
+                        cardName: item.name
                     ) {
-                        Text("\(item.name)").font(.title)
+                        VStack {
+                        //Train this power for your exams!
+                            
+                            Spacer()
+                            Text(item.name).font(.system(size: 24, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 0.48, green: 0.38, blue: 1, alpha: 1))).tracking(0.36)
+                            Image(item.name)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 360, height: 262)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .frame(width: 313, height: 262)
+                            Text(item.motto).font(.system(size: 12, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 0.42, green: 0.42, blue: 0.42, alpha: 1))).tracking(0.36)
+                            Spacer()
+
+                        //EXAWER
+                            
+                        }
                     }
                     .foregroundColor(Color.white)
                     .background(Color("surface"))
@@ -180,6 +206,8 @@ struct SnapCarousel: View {
 struct Card_Carousel: Decodable, Hashable, Identifiable {
     var id: Int
     var name: String = ""
+    var cardColor: String = ""
+    var motto: String = ""
 }
 
 public class UIStateModel: ObservableObject {
@@ -275,6 +303,8 @@ struct Item<Content: View>: View {
     
     let cardWidth: CGFloat
     let cardHeight: CGFloat
+    let cardColor : String
+    let cardName : String
     
     var _id: Int
     var content: Content
@@ -284,21 +314,25 @@ _id: Int,
 spacing: CGFloat,
 widthOfHiddenCards: CGFloat,
 cardHeight: CGFloat,
+cardColor: String,
+cardName: String,
     @ViewBuilder _ content: () -> Content
     ) {
         self.content = content()
         self.cardWidth = UIScreen.main.bounds.width - (widthOfHiddenCards*2) - (spacing*2) //279
         self.cardHeight = cardHeight
         self._id = _id
+        self.cardColor = cardColor
+        self.cardName = cardName
     }
     
     var body: some View {
         content
             .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                        .fill(Color(#colorLiteral(red: 0.5411764979362488, green: 0.5333333611488342, blue: 0.886274516582489, alpha: 1)))).onTapGesture {
+                                                                                                                                        .fill(Color("carousel_violet"))).onTapGesture {
                 showingSheet.toggle()
             }.sheet(isPresented: $showingSheet) {
-                SheetView()
+                SheetView(nameCard: self.cardName)
             }
     }
 }
@@ -310,3 +344,5 @@ struct SnapCarousel_Previews: PreviewProvider {
         SnapCarousel(UIState: UIState)
     }
 }
+
+
