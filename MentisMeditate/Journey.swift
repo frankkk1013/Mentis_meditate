@@ -26,7 +26,7 @@ struct Journey: View {
                         .padding(.bottom, -10)
                     
                     VStack(alignment:.leading){
-                        CardView(subtitle: "hello", title: "prova", backgroundImage: Image("luna"), briefSummary: "SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
+                        CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
                             .environmentObject(self.control)
                         
                     }.padding()
@@ -53,7 +53,7 @@ struct Journey: View {
                 
                 
                 
-            }
+            }.accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
             
             //            TabView{
             //

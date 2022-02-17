@@ -105,7 +105,7 @@ struct CardInnerView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
+            VStack(alignment: .leading){
                 TopView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, isShow: self.$isShow)
                     .frame(height: 300)
                     .background(
@@ -172,7 +172,7 @@ struct TopView: View {
                 
                 
                 HStack(alignment: .center) {
-                    VStack{
+                    VStack(alignment: .leading){
                     Text(self.briefSummary)
                         .foregroundColor(.white)
                         .bold()
@@ -232,20 +232,48 @@ struct ExpandableView: View {
             Text(self.description)
                 .font(.body)
                 .foregroundColor(.black)
-                .padding()
+                .padding(.bottom, 10)
             Spacer()
             HStack{
                 Image(systemName: "waveform")
                     .foregroundColor(.indigo)
+                Spacer()
                 Text("Duration")
                     .bold()
-            }
+                Spacer()
+                ZStack{
+                    Menu("3 min"){
+                        Button("3 min", action: placeOrder)
+                        Button("5 min", action: adjustOrder)
+                        Button("7 min", action: cancelOrder)
+                    
+
+                    }.background( Rectangle()
+                                    .frame(width:95, height: 50)
+                                    .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                    .cornerRadius(15)
+                                    .opacity(0.20))
+                }
+            }.padding()
             HStack{
                 Image(systemName: "hourglass")
                     .foregroundColor(.indigo)
+                Spacer()
                 Text("Voice")
                     .bold()
-            }
+                Spacer()
+                ZStack{
+                    Menu("no voice"){
+                    Button("voice", action: placeOrder)
+                    Button("no voice", action: adjustOrder)
+
+                }.background( Rectangle()
+                                .frame(width:95, height: 50)
+                                .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                .cornerRadius(15)
+                                .opacity(0.20))
+                }
+            }.padding()
 //            StepperView()
 //                    .addSteps(cells)
 //                    .indicators(indicators)
@@ -256,4 +284,9 @@ struct ExpandableView: View {
 //                    .padding(.all)
         }.padding(.all)
     }
+  
+
+    func placeOrder() { }
+    func adjustOrder() { }
+    func cancelOrder() { }
 }
