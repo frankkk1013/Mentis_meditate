@@ -105,7 +105,7 @@ struct CardInnerView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
+            VStack(alignment: .leading){
                 TopView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, isShow: self.$isShow)
                     .frame(height: 300)
                     .background(
@@ -172,13 +172,18 @@ struct TopView: View {
                 
                 
                 HStack(alignment: .center) {
-                    
+                    VStack(alignment: .leading){
                     Text(self.briefSummary)
                         .foregroundColor(.white)
+                        .bold()
                         .font(.caption)
                         .lineLimit(3)
+                        Text("morning")
+                            .foregroundColor(.white)
+                            .font(.caption)
+                            .lineLimit(3)
+                    }
                     Spacer()
-                    
                     Button {
                         print("Button was tapped")
                     } label: {
@@ -208,34 +213,80 @@ struct ExpandableView: View {
     var description: String
     
     @Binding var isShow: Bool
-    let cells = [ CustomStepTextView(text: "Basic Details"),
-                  CustomStepTextView(text: "Company Details"),
-                  CustomStepTextView(text: "Subscription plan"),
-                  CustomStepTextView(text: "Payment details")
-    ]
-    
-    //Custom Indicators to point.
-    let indicators = [
-        StepperIndicationType.custom(Image(systemName:"1.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-        StepperIndicationType.custom(Image(systemName:"2.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-        StepperIndicationType.custom(Image(systemName:"3.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-        StepperIndicationType.custom(Image(systemName:"4.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView())
-    ]
+//    let cells = [ CustomStepTextView(text: "Basic Details"),
+//                  CustomStepTextView(text: "Company Details"),
+//                  CustomStepTextView(text: "Subscription plan"),
+//                  CustomStepTextView(text: "Payment details")
+//    ]
+//
+//    //Custom Indicators to point.
+//    let indicators = [
+//        StepperIndicationType.custom(Image(systemName:"1.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
+//        StepperIndicationType.custom(Image(systemName:"2.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
+//        StepperIndicationType.custom(Image(systemName:"3.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
+//        StepperIndicationType.custom(Image(systemName:"4.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView())
+//    ]
     
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Text(self.description)
                 .font(.body)
                 .foregroundColor(.black)
-                .padding()
-            StepperView()
-                    .addSteps(cells)
-                    .indicators(indicators)
-                    .stepIndicatorMode(StepperMode.vertical)
-                    .spacing(30)
-                    .lineOptions(StepperLineOptions.rounded(4, 8, Color.indigo))
-                    .stepLifeCycles([StepLifeCycle.completed, .completed, .pending, .pending])
-                    .padding(.all)
+                .padding(.bottom, 10)
+            Spacer()
+            HStack{
+                Image(systemName: "waveform")
+                    .foregroundColor(.indigo)
+                Spacer()
+                Text("Duration")
+                    .bold()
+                Spacer()
+                ZStack{
+                    Menu("3 min"){
+                        Button("3 min", action: placeOrder)
+                        Button("5 min", action: adjustOrder)
+                        Button("7 min", action: cancelOrder)
+                    
+
+                    }.background( Rectangle()
+                                    .frame(width:95, height: 50)
+                                    .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                    .cornerRadius(15)
+                                    .opacity(0.20))
+                }
+            }.padding()
+            HStack{
+                Image(systemName: "hourglass")
+                    .foregroundColor(.indigo)
+                Spacer()
+                Text("Voice")
+                    .bold()
+                Spacer()
+                ZStack{
+                    Menu("no voice"){
+                    Button("voice", action: placeOrder)
+                    Button("no voice", action: adjustOrder)
+
+                }.background( Rectangle()
+                                .frame(width:95, height: 50)
+                                .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                .cornerRadius(15)
+                                .opacity(0.20))
+                }
+            }.padding()
+//            StepperView()
+//                    .addSteps(cells)
+//                    .indicators(indicators)
+//                    .stepIndicatorMode(StepperMode.vertical)
+//                    .spacing(30)
+//                    .lineOptions(StepperLineOptions.rounded(4, 8, Color.indigo))
+//                    .stepLifeCycles([StepLifeCycle.completed, .completed, .pending, .pending])
+//                    .padding(.all)
         }.padding(.all)
     }
+  
+
+    func placeOrder() { }
+    func adjustOrder() { }
+    func cancelOrder() { }
 }
