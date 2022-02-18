@@ -57,17 +57,41 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader { geo in
-            CardInnerView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description, isShow: self.$isShowDetail)
-                .onTapGesture {
-                    withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
-                        self.isShowDetail.toggle()
-                        self.control.anyTriggered.toggle()
+            ZStack(alignment: .topTrailing){
+                CardInnerView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description, isShow: self.$isShowDetail)
+                    .onTapGesture {
+                        withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
+                            self.isShowDetail.toggle()
+                            self.control.anyTriggered.toggle()
+                    }
                 }
+                if self.isShowDetail{
+                    Button(action: {
+                        withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
+                            self.isShowDetail.toggle()
+                            self.control.anyTriggered.toggle()
+                    }
+                    }) {
+                        Image(systemName: "x.circle.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.black)
+                    }.padding()
+                }
+                
             }
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .offset(x: self.isShowDetail ? -geo.frame(in: .global).minX : 0, y: self.isShowDetail ? -geo.frame(in: .global).minY : 0)
-            .frame(height: self.isShowDetail ? UIScreen.main.bounds.height : nil)
-            .frame(width: self.isShowDetail ? UIScreen.main.bounds.width : nil)
+                
+                
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .offset(x: self.isShowDetail ? -geo.frame(in: .global).minX : 0, y: self.isShowDetail ? -geo.frame(in: .global).minY : 0)
+                .frame(height: self.isShowDetail ? UIScreen.main.bounds.height : nil)
+                .frame(width: self.isShowDetail ? UIScreen.main.bounds.width : nil)
+                
+                
+                
+                
+            
+            
         }
         .frame(width: UIScreen.main.bounds.width - 40)
         .frame(height: 300)
@@ -106,17 +130,21 @@ struct CardInnerView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading){
-                TopView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, isShow: self.$isShow)
-                    .frame(height: 300)
-                    .background(
-                        self.backgroundImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
-                            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                            .opacity(0.8)
-                    )
-                    .offset(y: self.translation.height)
+                                    
+                    TopView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, isShow: self.$isShow)
+                        .frame(height: 300)
+                        .background(
+                            self.backgroundImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
+                                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                                .opacity(0.8)
+                        )
+                        .offset(y: self.translation.height)
+                   
+                
+                
                 
                 if self.isShow {
                     ScrollView {
