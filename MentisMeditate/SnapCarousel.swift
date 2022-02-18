@@ -349,7 +349,7 @@ cardName: String,
                 
                 content
                     .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                                .fill(Color("carousel_violet"))).onTapGesture {
+                                                                                                                                                .fill(Color(self.cardColor))).onTapGesture {
                         showingSheet.toggle()
                     }.sheet(isPresented: $showingSheet, onDismiss: {
                         showJourney = true
