@@ -184,9 +184,7 @@ struct TopView: View {
                             .lineLimit(3)
                     }
                     Spacer()
-                    Button {
-                    
-                    } label: {
+                    Button (action: { }){
                         Text("Start")
                             .padding()
                             .foregroundColor(.indigo)
