@@ -13,8 +13,8 @@ struct MentisMeditateApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-//           SnapCarousel(UIState: UIState)
-            Breathing()
+           SnapCarousel(UIState: UIState)
+//            Breathing()
         }
     }
 }

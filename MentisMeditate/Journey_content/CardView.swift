@@ -9,6 +9,9 @@
 import SwiftUI
 import Combine
 import StepperView
+
+
+
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 struct IndicatorImageView: View {
     var name:String
@@ -51,7 +54,8 @@ struct CardView: View {
     var backgroundImage: Image
     var briefSummary: String
     var description: String
-    
+  
+    @State var isPressedX = false
     @State var isShowDetail = false
     @EnvironmentObject var control: CardView_Control
     
@@ -60,16 +64,21 @@ struct CardView: View {
             ZStack(alignment: .topTrailing){
                 CardInnerView(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description, isShow: self.$isShowDetail)
                     .onTapGesture {
-                        withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
-                            self.isShowDetail.toggle()
-                            self.control.anyTriggered.toggle()
-                    }
+                        if self.isShowDetail == false {
+                            withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
+                                self.isShowDetail.toggle()
+                                self.control.anyTriggered.toggle()
+                                    
+                        }
+                        }
                 }
                 if self.isShowDetail{
                     Button(action: {
                         withAnimation(.interpolatingSpring(mass: 1, stiffness: 90, damping: 15, initialVelocity: 1)) {
                             self.isShowDetail.toggle()
                             self.control.anyTriggered.toggle()
+                            
+                            
                     }
                     }) {
                         Image(systemName: "x.circle.fill")
@@ -81,11 +90,11 @@ struct CardView: View {
                 
             }
                 
-                
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .offset(x: self.isShowDetail ? -geo.frame(in: .global).minX : 0, y: self.isShowDetail ? -geo.frame(in: .global).minY : 0)
                 .frame(height: self.isShowDetail ? UIScreen.main.bounds.height : nil)
                 .frame(width: self.isShowDetail ? UIScreen.main.bounds.width : nil)
+                
                 
                 
                 
@@ -96,7 +105,9 @@ struct CardView: View {
         .frame(width: UIScreen.main.bounds.width - 40)
         .frame(height: 300)
         .offset(x: control.anyTriggered && !isShowDetail ? UIScreen.main.bounds.width : 0)
+       
         .opacity(control.anyTriggered && !isShowDetail ? 0 : 1)
+                
     }
 }
 
@@ -127,6 +138,7 @@ struct CardInnerView: View {
     @Binding var isShow: Bool
     @State private var translation = CGSize.zero
     
+    
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading){
@@ -151,6 +163,10 @@ struct CardInnerView: View {
                         ExpandableView(description: self.description, isShow: self.$isShow)
                             .transition(.opacity)
                     }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    
+                    .navigationBarBackButtonHidden(true)
                 }
             }
             .background(Color.white)
@@ -163,6 +179,7 @@ struct TopView: View {
     var title: String
     var backgroundImage: Image
     var briefSummary: String
+    @State private var showBreath = false
     
     @Binding var isShow: Bool
     
@@ -212,10 +229,12 @@ struct TopView: View {
                             .lineLimit(3)
                     }
                     Spacer()
+                    NavigationLink("", isActive: $showBreath, destination: {Breathing()})
                     Button {
-                        print("Button was tapped")
+                        self.showBreath.toggle()
+                    
                     } label: {
-                        Text("Tap me!")
+                        Text("Start")
                             .padding()
                             .foregroundColor(.indigo)
                             .font(.footnote)
@@ -225,7 +244,7 @@ struct TopView: View {
                         
                     }.foregroundColor(.white)
                         .background(Color.white)
-                        .cornerRadius(40)
+                        .cornerRadius(17)
                     
                     
                 }
@@ -240,21 +259,10 @@ struct TopView: View {
 struct ExpandableView: View {
     var description: String
     
-    @Binding var isShow: Bool
-//    let cells = [ CustomStepTextView(text: "Basic Details"),
-//                  CustomStepTextView(text: "Company Details"),
-//                  CustomStepTextView(text: "Subscription plan"),
-//                  CustomStepTextView(text: "Payment details")
-//    ]
-//
-//    //Custom Indicators to point.
-//    let indicators = [
-//        StepperIndicationType.custom(Image(systemName:"1.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-//        StepperIndicationType.custom(Image(systemName:"2.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-//        StepperIndicationType.custom(Image(systemName:"3.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView()),
-//        StepperIndicationType.custom(Image(systemName:"4.square.fill").font(.largeTitle).foregroundColor(.indigo).eraseToAnyView())
-//    ]
     
+    @Binding var isShow: Bool
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+
     var body: some View {
         VStack(alignment: .leading){
             Text(self.description)
@@ -291,10 +299,9 @@ struct ExpandableView: View {
                     .bold()
                 Spacer()
                 ZStack{
-                    Menu("no voice"){
-                    Button("voice", action: placeOrder)
-                    Button("no voice", action: adjustOrder)
-
+                    Menu("Voice"){
+                    Button("Voice", action: placeOrder)
+                    Button("No voice", action: adjustOrder)
                 }.background( Rectangle()
                                 .frame(width:95, height: 50)
                                 .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
@@ -302,15 +309,9 @@ struct ExpandableView: View {
                                 .opacity(0.20))
                 }
             }.padding()
-//            StepperView()
-//                    .addSteps(cells)
-//                    .indicators(indicators)
-//                    .stepIndicatorMode(StepperMode.vertical)
-//                    .spacing(30)
-//                    .lineOptions(StepperLineOptions.rounded(4, 8, Color.indigo))
-//                    .stepLifeCycles([StepLifeCycle.completed, .completed, .pending, .pending])
-//                    .padding(.all)
+
         }.padding(.all)
+            
     }
   
 

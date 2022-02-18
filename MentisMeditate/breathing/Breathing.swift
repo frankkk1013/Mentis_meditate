@@ -26,7 +26,7 @@ struct Breathing: View {
             Circle()
             .fill(Color(#colorLiteral(red: 0.8434115052223206, green: 0.8413889408111572, blue: 0.970833420753479, alpha: 1)))
             .frame(width: 200, height: 200)
-            Text("BREATH")
+//            Text("BREATH")
 
         //Ellipse 4
             Circle()
@@ -34,8 +34,8 @@ struct Breathing: View {
             
             .frame(width: 360, height: 360)
             .scaleEffect(breathIn ? 1 : 0.8)
-            .scaleEffect(breathOut ? 0.8 : 1)
             .scaleEffect(hold ? 1 : 1)
+            .scaleEffect(breathOut ? 0.8 : 1)
             .onAppear(){
                 withAnimation(Animation.linear(duration: 4)){
                     self.breathIn.toggle()
@@ -107,7 +107,8 @@ struct Breathing: View {
                         self.hideBreathIn.toggle()
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
     }
 }
 

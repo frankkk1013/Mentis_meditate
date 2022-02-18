@@ -22,16 +22,19 @@ struct Journey: View {
             TabView{
                 
                 ScrollView{
-//                    TopMenu(isProfileShow: $isProfileShow)
-//                        .padding()
-//                        .padding(.bottom, -10)
-//                        .ignoresSafeArea(.all)
-//
+                    TopMenu(isProfileShow: $isProfileShow)
+                        .padding()
+                        .padding(.bottom, -10)
+                        .ignoresSafeArea(.all)
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true)
+
                     VStack(alignment:.leading){
                         CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
                             .environmentObject(self.control)
                         
                     }.padding()
+//                        .navigationBarHidden($control.anyTriggered)
                 }.tabItem {
                     Image(systemName: "leaf.fill")
                     Text("Journey")
@@ -54,32 +57,34 @@ struct Journey: View {
                 
                 
                 
-                
+              
+                    
             }.accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
                 .background(
                         NavigationLink(destination: SnapCarousel(), isActive: $showNew) {
                           EmptyView()
                         }
                     )
-                .navigationBarBackButtonHidden(true)
-                .navigationBarTitleDisplayMode(.large)
-                .navigationTitle("Journey")
-                                .toolbar {
-                                    ToolbarItem(placement: .navigationBarTrailing) {
-                                        Button(action: {
-                                            self.showNew = true
-                                        }) {
-                                            Image(systemName: "gyroscope")
-                                                .resizable()
-                                                .frame(width: 30, height: 30)
-                                                .foregroundColor(.indigo)
-                                        }
-                                    }
-                                }
+                
+//                .navigationBarBackButtonHidden(true)
+//                .navigationBarTitleDisplayMode(.large)
+//                .navigationTitle("Journey")
+//                                .toolbar {
+//                                    ToolbarItem(placement: .navigationBarTrailing) {
+//                                        Button(action: {
+//                                            self.showNew = true
+//                                        }) {
+//                                            Image(systemName: "gyroscope")
+//                                                .resizable()
+//                                                .frame(width: 30, height: 30)
+//                                                .foregroundColor(.indigo)
+//                                        }
+//                                    }
+//                                }
             //            TabView{
             //
-//                       }
-        }
+//                      }
+        }.edgesIgnoringSafeArea(.top)
           
             
           
@@ -93,7 +98,7 @@ struct Journey: View {
         
         
         
-        //            .navigationBarHidden(control.anyTriggered)
+                   
         //                .navigationBarTitle("") //Set title to none so that it won't put the bottom title
         //                .navigationBarItems(leading:
         //                                        //This is your made up title, put in the leading view so it is up top aligned with the plus button
