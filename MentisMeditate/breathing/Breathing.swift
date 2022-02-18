@@ -10,7 +10,15 @@ import SwiftUI
 struct Breathing: View {
     @State private var breathIn = false
     @State private var breathOut = false
-    @State private var hold = false
+    @State private var displayHold = false
+    @State private var hold = true
+    @State private var displayBreathOut = false
+    @State private var hideBreathOut = false
+    @State private var hideBreathIn = false
+    @State private var hideHold = false
+    @State private var displaySecondHold = false
+    @State private var hideSecondHold = false
+    
     var body: some View {
         //Ellipse 5
         ZStack {
@@ -18,6 +26,7 @@ struct Breathing: View {
             Circle()
             .fill(Color(#colorLiteral(red: 0.8434115052223206, green: 0.8413889408111572, blue: 0.970833420753479, alpha: 1)))
             .frame(width: 200, height: 200)
+            Text("BREATH")
 
         //Ellipse 4
             Circle()
@@ -43,6 +52,60 @@ struct Breathing: View {
                 }
 
                 
+            }
+            ZStack {
+                Text("Breath Out")
+                    .foregroundColor(.black)
+                    .scaleEffect(1)
+                    .opacity(displayBreathOut ? 1 : 0)
+                    .opacity(hideBreathOut ? 0 : 1)
+                    .onAppear(){
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(8)) {
+                             self.displayBreathOut.toggle()
+                        }
+                        
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(12)) {
+                             self.hideBreathOut.toggle()
+                        }
+                }
+                
+                Text("Hold") // Second hold
+                    .foregroundColor(.black)
+                    .scaleEffect(1)
+                    .opacity(displaySecondHold ? 1 : 0)
+                    .opacity(hideSecondHold ? 0 : 1)
+                    .onAppear(){
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(12)) {
+                             self.displaySecondHold.toggle()
+                        }
+                        
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(16)) {
+                             self.hideSecondHold.toggle()
+                        }
+                }
+                
+                Text("Hold")
+                    .foregroundColor(.black)
+                    .scaleEffect(1)
+                    .opacity(displayHold ? 1 : 0)
+                    .opacity(hideHold ? 0 : 1)
+                    .onAppear(){
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(4)) {
+                             self.displayHold.toggle()
+                        }
+                        
+                        withAnimation(Animation.easeInOut(duration: 0.4).delay(8)) {
+                             self.hideHold.toggle()
+                        }
+                }
+                
+                Text("Breath In")
+                    .foregroundColor(.black)
+                    .opacity(hideBreathIn ? 0 : 1)
+                    .animation(Animation.easeInOut(duration: 0.4).delay(4))
+                    .onAppear(){
+                        self.hideBreathIn.toggle()
+                }
             }
         }
     }

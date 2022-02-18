@@ -83,7 +83,12 @@ struct SheetView: View {
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
                 
+//g
+                Button(action: {presentationMode.wrappedValue.dismiss()})
+                {Text("add")}
+
                 NavigationLink("Add", destination: Journey() )
+
                     .font(.title3)
                   
                     .foregroundColor(Color.white)
@@ -139,7 +144,7 @@ struct SheetView: View {
 
 struct SnapCarousel: View {
     
-    @State var UIState: UIStateModel
+    @State var UIState: UIStateModel = UIStateModel()
     
     
     var body: some View {
@@ -148,8 +153,8 @@ struct SnapCarousel: View {
         let cardHeight: CGFloat = 450
         let items = [
             Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 1, name: "RISE AND SHINE", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 2, name: "Lets", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 1, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 2, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
             Card_Carousel(id: 3, name: "Go", cardColor: "carousel_violet", motto: "Train this power for your exams!")
         ]
         
@@ -186,15 +191,16 @@ struct SnapCarousel: View {
                                 .frame(width: 313, height: 262)
                             Text(item.motto).font(.system(size: 12, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 0.42, green: 0.42, blue: 0.42, alpha: 1))).tracking(0.36)
                             Spacer()
+                            
 
                         //EXAWER
                             
                         }
                     }
                     .foregroundColor(Color.white)
-                    .background(Color("surface"))
+//                    .background(Color("surface"))
                     .cornerRadius(8)
-                    .shadow(color: Color("shadow1"), radius: 4, x: 0, y: 4)
+//                    .shadow(color: Color("shadow1"), radius: 4, x: 0, y: 4)
                     .transition(AnyTransition.slide)
                     .animation(.spring())
                 }
@@ -291,14 +297,24 @@ struct Canvas<Content : View> : View {
     }
     
     var body: some View {
-        content
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
+        NavigationView{
+            VStack{
+                content
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .background(Color.white.edgesIgnoringSafeArea(.all))
+            } .navigationBarHidden(true)
+            
+            
+        }
+           
+            
+        
     }
 }
 
 struct Item<Content: View>: View {
     @State private var showingSheet = false
+    @State private var showJourney = false
     @EnvironmentObject var UIState: UIStateModel
     
     let cardWidth: CGFloat
@@ -327,13 +343,21 @@ cardName: String,
     }
     
     var body: some View {
-        content
-            .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                        .fill(Color("carousel_violet"))).onTapGesture {
-                showingSheet.toggle()
-            }.sheet(isPresented: $showingSheet) {
-                SheetView(nameCard: self.cardName)
-            }
+//        NavigationView{
+//            VStack{
+               NavigationLink("hi", isActive: $showJourney, destination: { Journey()})
+                
+                content
+                    .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
+                                                                                                                                                .fill(Color("carousel_violet"))).onTapGesture {
+                        showingSheet.toggle()
+                    }.sheet(isPresented: $showingSheet, onDismiss: {
+                        showJourney = true
+                    }) {
+                        SheetView(nameCard: self.cardName)
+                    }
+//            }
+//        }
     }
 }
 

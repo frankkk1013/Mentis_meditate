@@ -11,20 +11,22 @@ struct Journey: View {
     @State var isProfileShow = false
     @State var counter: CGFloat = 0;
     @ObservedObject var control = CardView_Control()
+    @State private var showNew = false
     
     
     var body: some View {
-        //        NavigationView {
+//            NavigationView {
         
         
         VStack{
             TabView{
                 
                 ScrollView{
-                    TopMenu(isProfileShow: $isProfileShow)
-                        .padding()
-                        .padding(.bottom, -10)
-                    
+//                    TopMenu(isProfileShow: $isProfileShow)
+//                        .padding()
+//                        .padding(.bottom, -10)
+//                        .ignoresSafeArea(.all)
+//
                     VStack(alignment:.leading){
                         CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
                             .environmentObject(self.control)
@@ -54,12 +56,35 @@ struct Journey: View {
                 
                 
             }.accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
-            
+                .background(
+                        NavigationLink(destination: SnapCarousel(), isActive: $showNew) {
+                          EmptyView()
+                        }
+                    )
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitleDisplayMode(.large)
+                .navigationTitle("Journey")
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Button(action: {
+                                            self.showNew = true
+                                        }) {
+                                            Image(systemName: "gyroscope")
+                                                .resizable()
+                                                .frame(width: 30, height: 30)
+                                                .foregroundColor(.indigo)
+                                        }
+                                    }
+                                }
             //            TabView{
             //
-            //            }
+//                       }
         }
-        
+          
+            
+          
+              
+            
         
         
         
