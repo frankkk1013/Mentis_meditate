@@ -90,6 +90,7 @@ struct CardView: View {
                 
             }
                 
+                
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .offset(x: self.isShowDetail ? -geo.frame(in: .global).minX : 0, y: self.isShowDetail ? -geo.frame(in: .global).minY : 0)
                 .frame(height: self.isShowDetail ? UIScreen.main.bounds.height : nil)

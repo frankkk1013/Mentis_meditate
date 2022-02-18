@@ -155,10 +155,10 @@ struct SnapCarousel: View {
         let widthOfHiddenCards: CGFloat = 32 /// UIScreen.main.bounds.width - 10
         let cardHeight: CGFloat = 450
         let items = [
-            Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 1, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 2, name: "EXAWER", cardColor: "carousel_violet", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 3, name: "Go", cardColor: "carousel_violet", motto: "Train this power for your exams!")
+            Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_exawer", motto: "Train this power for your exams!"),
+            Card_Carousel(id: 1, name: "RISE AND SHINE", cardColor: "carousel_riseandshine", motto: "Train this power for the perfect presentation!"),
+            Card_Carousel(id: 2, name: "INNER PARTY", cardColor: "carousel_innerparty", motto: "Train this power for to sit back and relax!"),
+//            Card_Carousel(id: 3, name: "Go", cardColor: "carousel_violet", motto: "Train this power for your exams!")
         ]
         
         
@@ -352,7 +352,7 @@ cardName: String,
                 
                 content
                     .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                                .fill(Color("carousel_violet"))).onTapGesture {
+                                                                                                                                                .fill(Color(self.cardColor))).onTapGesture {
                         showingSheet.toggle()
                     }.sheet(isPresented: $showingSheet, onDismiss: {
                         showJourney.toggle()
