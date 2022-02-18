@@ -1,13 +1,16 @@
 import SwiftUI
 var UIState : UIStateModel = UIStateModel()
 
-
+class HideBarViewModel: ObservableObject {
+    @Published var isHidden = false
+}
 
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.presentationMode) var presentationMode
     var keywords = ["hurry", "worry", "anxiety", "stress", "exam"]
     @State var nameCard : String
+   
     
     
     var body: some View {
@@ -83,8 +86,12 @@ struct SheetView: View {
                     .font(.system(size: 14, weight: .medium)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6)))
                     .padding()
                 
+//g
                 Button(action: {presentationMode.wrappedValue.dismiss()})
                 {Text("add")}
+
+//                NavigationLink("Add", destination: Journey() )
+
                     .font(.title3)
                   
                     .foregroundColor(Color.white)
@@ -341,14 +348,14 @@ cardName: String,
     var body: some View {
 //        NavigationView{
 //            VStack{
-               NavigationLink("hi", isActive: $showJourney, destination: { Journey()})
+               NavigationLink("", isActive: $showJourney, destination: { Journey()})
                 
                 content
                     .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
                                                                                                                                                 .fill(Color("carousel_violet"))).onTapGesture {
                         showingSheet.toggle()
                     }.sheet(isPresented: $showingSheet, onDismiss: {
-                        showJourney = true
+                        showJourney.toggle()
                     }) {
                         SheetView(nameCard: self.cardName)
                     }
