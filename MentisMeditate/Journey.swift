@@ -30,6 +30,8 @@ struct Journey: View {
                     VStack(alignment:.leading){
                         CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
                             .environmentObject(self.control)
+                        CardView(subtitle: "hello", title: "RISE AND SHINE", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ")
+                            .environmentObject(self.control)
                         
                     }.padding()
                 }.tabItem {
