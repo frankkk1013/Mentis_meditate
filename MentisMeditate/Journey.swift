@@ -8,114 +8,111 @@
 import SwiftUI
 
 struct Journey: View {
-    @State var isProfileShow = false
+    @State var isJourneyShow = false
     @State var counter: CGFloat = 0;
     @ObservedObject var control = CardView_Control()
     @State private var showNew = false
+    @State var title : String = ""
+    
     
     
     var body: some View {
-//            NavigationView {
         
-        
-        VStack{
-            TabView{
-                
-                ScrollView{
-                    TopMenu(isProfileShow: $isProfileShow)
-                        .padding()
-                        .padding(.bottom, -10)
-                        .ignoresSafeArea(.all)
-                        .navigationBarBackButtonHidden(true)
-                        .navigationBarHidden(true)
-
-                    VStack(alignment:.leading){
-                        CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
-                            .environmentObject(self.control)
-                        CardView(subtitle: "hello", title: "MOTIVATION", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Motivate yourself thanks to this exercise ")
-                            .environmentObject(self.control)
-                        
-                    }.padding()
-//                        .navigationBarHidden($control.anyTriggered)
-                }.tabItem {
-                    Image(systemName: "leaf.fill")
-                    Text("Journey")
-                }
-                
-                
-                Background_music().tabItem {
-                    Image(systemName: "headphones")
-                    Text("Sounds")
-                }
-                //                    Text("Background Music")
-                //                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                
-                
-                Progress()
-                    .tabItem {
-                        Image(systemName: "scale.3d")
-                        Text("Statistics")
-                    }
-                
-                
-                
-              
+        TabView{
+            
+            ScrollView{
+                VStack(alignment:.leading){
                     
-            }.accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
-                .background(
-                        NavigationLink(destination: SnapCarousel(), isActive: $showNew) {
-                          EmptyView()
-                        }
+                    
+                    CardView(subtitle: "hello", title: "MOTIVATION", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Motivate yourself thanks to this exercise ")
+                        .environmentObject(self.control).padding()
+                    
+                    CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
+                        .environmentObject(self.control).padding()
+                    NavigationLink("", isActive: $showNew, destination: { SnapCarousel().navigationBarHidden(true)}
+                        
                     )
-                
-//                .navigationBarBackButtonHidden(true)
-//                .navigationBarTitleDisplayMode(.large)
-//                .navigationTitle("Journey")
-//                                .toolbar {
-//                                    ToolbarItem(placement: .navigationBarTrailing) {
-//                                        Button(action: {
-//                                            self.showNew = true
-//                                        }) {
-//                                            Image(systemName: "gyroscope")
-//                                                .resizable()
-//                                                .frame(width: 30, height: 30)
-//                                                .foregroundColor(.indigo)
-//                                        }
-//                                    }
-//                                }
-            //            TabView{
-            //
-//                      }
-        }.edgesIgnoringSafeArea(.top)
-          
-            
-          
-              
-            
-        
-        
-        
-        
-        
-        
-        
-        
+                    
+                }.onAppear{
+                    self.title = "Journey"
+                    self.isJourneyShow = true
                    
-        //                .navigationBarTitle("") //Set title to none so that it won't put the bottom title
-        //                .navigationBarItems(leading:
-        //                                        //This is your made up title, put in the leading view so it is up top aligned with the plus button
-        //                                    Text("Journey").font(.largeTitle).bold()
-        //                                    //This is the plus button, on the right side, aka trailing view
-        //                                    , trailing: Button(action: {
-        //
-        //                }, label: {
-        //                    Image(systemName: "gyroscope").foregroundColor(.indigo)
-        //                })
-        //                )
+                    self.control.anyTriggered = false
+                    
+                    
+                    
+                }.ignoresSafeArea()
+                
+                
+            }.tabItem {
+                Image(systemName: "leaf.fill")
+                Text("Journey")
+            }
+            
+            
+            
+            //            NavigationView{
+            Background_music().onAppear{
+                self.title = "Playlist"
+                self.isJourneyShow = false
+                self.control.anyTriggered = true
+                
+                
+                
+            }
+            
+            //            }
+            .tabItem {
+                Image(systemName: "headphones")
+                Text("Sounds")
+            }
+            
+            //            NavigationView{
+            Progress().onAppear{
+                self.title = "Progress"
+                self.isJourneyShow = false
+                self.control.anyTriggered = true
+                
+                
+            }
+            
+            //            }
+            .tabItem {
+                Image(systemName: "scale.3d")
+                Text("Progress")
+            }
+            
+            
+            
+        }
+        .accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
         
-        //Aggiungere TAB
+        .navigationTitle(title)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(!self.control.anyTriggered)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing ){
+                if isJourneyShow && !control.anyTriggered {
+                    Button{
+                        self.showNew.toggle()
+                        
+                        
+                    }label:{
+                        Image(systemName: "gyroscope")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.indigo)
+                    }
+                }
+                
+                
+                
+                
+            }
+        }
+        
     }
-    //    }
+    
 }
 
 struct TopMenu: View {

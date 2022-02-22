@@ -12,9 +12,7 @@ struct Background_music: View {
             //da inserire for each
             
         }
-        .navigationBarTitle(Text("Playlist"))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

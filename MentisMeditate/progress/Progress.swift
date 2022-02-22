@@ -66,9 +66,9 @@ struct elementday: View{
 struct Progress: View {
     var body: some View {
         
-        NavigationView {
+        
             VStack{
-                Spacer()
+                
                 Section()
                 Spacer()
                 Section()
@@ -77,9 +77,9 @@ struct Progress: View {
                 Spacer()
 
 
-            }
-            .navigationBarTitle("Progress", displayMode: .large)
-        }
+            }.padding()
+            
+        
        
     }
 }

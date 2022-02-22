@@ -300,15 +300,15 @@ struct Canvas<Content : View> : View {
     }
     
     var body: some View {
-        NavigationView{
+       NavigationView{
             VStack{
                 content
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     .background(Color.white.edgesIgnoringSafeArea(.all))
-            } .navigationBarHidden(true)
+            }
             
             
-        }
+       }.navigationBarBackButtonHidden(true)
            
             
         
@@ -346,9 +346,10 @@ cardName: String,
     }
     
     var body: some View {
-//        NavigationView{
+//       NavigationView{
 //            VStack{
-               NavigationLink("", isActive: $showJourney, destination: { Journey()})
+        NavigationLink("", isActive: $showJourney, destination: { Journey()
+            })
                 
                 content
                     .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
@@ -360,7 +361,10 @@ cardName: String,
                         SheetView(nameCard: self.cardName)
                     }
 //            }
-//        }
+//
+        
+    .navigationTitle( "Choose your power" )
+      
     }
 }
 

@@ -107,8 +107,9 @@ struct Breathing: View {
                         self.hideBreathIn.toggle()
                 }
             }
-        }.navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
+        }.navigationBarTitleDisplayMode(.inline)
+            
+            
     }
 }
 

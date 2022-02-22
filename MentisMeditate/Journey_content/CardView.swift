@@ -70,7 +70,7 @@ struct CardView: View {
                                 self.control.anyTriggered.toggle()
                                     
                         }
-                        }
+                    }
                 }
                 if self.isShowDetail{
                     Button(action: {
@@ -86,6 +86,10 @@ struct CardView: View {
                             .frame(width: 30, height: 30)
                             .foregroundColor(.black)
                     }.padding()
+                    .padding()
+                    .padding(.top)
+                    .padding(.top)
+                    
                 }
                 
             }
@@ -108,7 +112,11 @@ struct CardView: View {
         .offset(x: control.anyTriggered && !isShowDetail ? UIScreen.main.bounds.width : 0)
        
         .opacity(control.anyTriggered && !isShowDetail ? 0 : 1)
-                
+        
+        
+        
+        
+        .navigationBarBackButtonHidden(true).edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -259,6 +267,8 @@ struct TopView: View {
 
 struct ExpandableView: View {
     var description: String
+    @State var duration: String = "3 min"
+    @State var voice: Bool = false
     
     
     @Binding var isShow: Bool
@@ -279,10 +289,20 @@ struct ExpandableView: View {
                     .bold()
                 Spacer()
                 ZStack{
-                    Menu("3 min"){
-                        Button("3 min", action: placeOrder)
-                        Button("5 min", action: adjustOrder)
-                        Button("7 min", action: cancelOrder)
+                    Menu(duration){
+                        Button("3 min"){
+                            self.duration = "3 min"
+
+                            
+                        }
+                                                        
+                        Button("5 min"){
+                          self.duration = "5 min"
+                        }
+                        Button("7 min"){
+                            self.duration = "7 min"
+                            
+                        }
                     
 
                     }.background( Rectangle()
@@ -300,9 +320,15 @@ struct ExpandableView: View {
                     .bold()
                 Spacer()
                 ZStack{
-                    Menu("Voice"){
-                    Button("Voice", action: placeOrder)
-                    Button("No voice", action: adjustOrder)
+                    Menu(voice ? "Voice" : "No Voice"){
+                        Button("Voice"){
+                            self.voice = true
+                            
+                        }
+                        Button("No Voice"){
+                            self.voice = false
+                            
+                        }
                 }.background( Rectangle()
                                 .frame(width:95, height: 50)
                                 .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
@@ -316,7 +342,5 @@ struct ExpandableView: View {
     }
   
 
-    func placeOrder() { }
-    func adjustOrder() { }
-    func cancelOrder() { }
+   
 }

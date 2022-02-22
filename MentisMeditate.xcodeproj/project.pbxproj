@@ -62,6 +62,13 @@
 			path = med_settings;
 			sourceTree = "<group>";
 		};
+		FB34C01E27C2DDDF007BF6E7 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
 		FB57A83427BD1677007E0A65 /* progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +122,7 @@
 		FB992BC327B65C4E0028D07B /* MentisMeditate */ = {
 			isa = PBXGroup;
 			children = (
+				FB34C01E27C2DDDF007BF6E7 /* hooks */,
 				FB57A83727BE52F3007E0A65 /* breathing */,
 				FB57A83427BD1677007E0A65 /* progress */,
 				78529E5627BCF425001F241E /* med_settings */,
