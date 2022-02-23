@@ -148,22 +148,34 @@ struct SheetView: View {
 struct SnapCarousel: View {
     
     @State var UIState: UIStateModel = UIStateModel()
+    @State var showDetails: Bool = false
+    @State var namePower: Int = -2
+    @State var counter: Int = 0
     
     
     var body: some View {
         let spacing: CGFloat = 16
         let widthOfHiddenCards: CGFloat = 32 /// UIScreen.main.bounds.width - 10
         let cardHeight: CGFloat = 450
-        let items = [
-            Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_exawer", motto: "Train this power for your exams!"),
-            Card_Carousel(id: 1, name: "RISE AND SHINE", cardColor: "carousel_riseandshine", motto: "Train this power for the perfect presentation!"),
-            Card_Carousel(id: 2, name: "INNER PARTY", cardColor: "carousel_innerparty", motto: "Train this power for to sit back and relax!"),
-//            Card_Carousel(id: 3, name: "Go", cardColor: "carousel_violet", motto: "Train this power for your exams!")
-        ]
+        
+        var items : [Card_Carousel] = []
+//            Card_Carousel(id: 0, name: "EXAWER", cardColor: "carousel_exawer", motto: "Train this power for your exams!"),
+//            Card_Carousel(id: 1, name: "RISE AND SHINE", cardColor: "carousel_riseandshine", motto: "Train this power for the perfect presentation!"),
+//            Card_Carousel(id: 2, name: "INNER PARTY", cardColor: "carousel_innerparty", motto: "Train this power for to sit back and relax!"),
+    
+        
+        MentisPaths.paths.forEach { path in
+            items.append(
+                Card_Carousel(id: path.id, name: path.title, cardColor: path.color, motto: path.subtitle)
+            
+            )
+            
+        }
         
         
         
         return Canvas {
+            
             
             
             Carousel(
@@ -198,6 +210,10 @@ struct SnapCarousel: View {
 
                         //EXAWER
                             
+                        }.onTapGesture{
+                            namePower =  MentisPaths.paths.firstIndex{$0.title == item.name}!
+                            showDetails.toggle()
+                            
                         }
                     }
                     .foregroundColor(Color.white)
@@ -208,7 +224,12 @@ struct SnapCarousel: View {
                     .animation(.spring())
                 }
             }.environmentObject(self.UIState)
-        }
+                .background{
+                    NavigationLink("", isActive: $showDetails, destination: { Pathdetails(id: namePower)})
+                }
+                
+        }.navigationBarTitle("Choose your power")
+           
     }
 }
 
@@ -300,7 +321,7 @@ struct Canvas<Content : View> : View {
     }
     
     var body: some View {
-       NavigationView{
+      
             VStack{
                 content
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
@@ -308,7 +329,8 @@ struct Canvas<Content : View> : View {
             }
             
             
-       }.navigationBarBackButtonHidden(true)
+       
+        
            
             
         
@@ -347,23 +369,17 @@ cardName: String,
     
     var body: some View {
 //       NavigationView{
-//            VStack{
-        NavigationLink("", isActive: $showJourney, destination: { Journey()
-            })
+            VStack{
+
                 
                 content
                     .frame(width: cardWidth, height: _id == UIState.activeCard ? cardHeight : cardHeight - 60, alignment: .center).background(RoundedRectangle(cornerRadius: 25)
-                                                                                                                                                .fill(Color(self.cardColor))).onTapGesture {
-                        showingSheet.toggle()
-                    }.sheet(isPresented: $showingSheet, onDismiss: {
-                        showJourney.toggle()
-                    }) {
-                        SheetView(nameCard: self.cardName)
-                    }
-//            }
+                                                                                                                                                .fill(Color(self.cardColor)))
+
+            }
 //
         
-    .navigationTitle( "Choose your power" )
+   
       
     }
 }

@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
-
+var MentisPaths: Paths = Paths()
 @main
 struct MentisMeditateApp: App {
     var UIState: UIStateModel = UIStateModel()
+    
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-           SnapCarousel(UIState: UIState)
+            NavigationView{
+                Journey()
+            }
 //            Breathing()
         }
     }

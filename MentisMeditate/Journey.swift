@@ -19,16 +19,29 @@ struct Journey: View {
     var body: some View {
         
         TabView{
+            SnapCarousel().onAppear{
+                
+                
+                
+            }
+                .tabItem{
+                Image(systemName: "seal")
+                        .onTapGesture {
+                    self.title = "Choose your Power"
+                }
+                Text("Carousel")
+                
+                }
             
             ScrollView{
                 VStack(alignment:.leading){
                     
                     
-                    CardView(subtitle: "hello", title: "MOTIVATION", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Motivate yourself thanks to this exercise ")
-                        .environmentObject(self.control).padding()
+                    TopCard(subtitle: "hello", title: "MOTIVATION", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Motivate yourself thanks to this exercise ")
+                        
                     
-                    CardView(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
-                        .environmentObject(self.control).padding()
+                    TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
+                        
                     NavigationLink("", isActive: $showNew, destination: { SnapCarousel().navigationBarHidden(true)}
                         
                     )
@@ -45,7 +58,9 @@ struct Journey: View {
                 
                 
             }.tabItem {
-                Image(systemName: "leaf.fill")
+                Image(systemName: "leaf.fill").onTapGesture {
+                    self.title = "Journey"
+                }
                 Text("Journey")
             }
             
@@ -64,6 +79,9 @@ struct Journey: View {
             //            }
             .tabItem {
                 Image(systemName: "headphones")
+                    .onTapGesture {
+                    self.title = "Playlist"
+                }
                 Text("Sounds")
             }
             
@@ -79,8 +97,13 @@ struct Journey: View {
             //            }
             .tabItem {
                 Image(systemName: "scale.3d")
+                    .onTapGesture {
+                    self.title = "Progress"
+                
+                }
                 Text("Progress")
             }
+            
             
             
             
@@ -89,20 +112,18 @@ struct Journey: View {
         
         .navigationTitle(title)
         .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(!self.control.anyTriggered)
+//        .navigationBarHidden(self.control.anyTriggered)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing ){
-                if isJourneyShow && !control.anyTriggered {
-                    Button{
-                        self.showNew.toggle()
-                        
-                        
-                    }label:{
-                        Image(systemName: "gyroscope")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.indigo)
-                    }
+                Button{
+                    self.showNew.toggle()
+                    
+                    
+                }label:{
+                    Image(systemName: "gyroscope")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.indigo)
                 }
                 
                 
@@ -115,34 +136,7 @@ struct Journey: View {
     
 }
 
-struct TopMenu: View {
-    @Binding var isProfileShow: Bool
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            //            Text("WED, JULY 31")
-            //                .font(.caption)
-            //                .padding(.bottom, -10)
-            //                .foregroundColor(.gray)
-            
-            HStack(alignment: .center) {
-                Text("Journey")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                Spacer()
-                
-                Button(action: { self.isProfileShow.toggle() }) {
-                    Image(systemName: "gyroscope")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.indigo)
-                }
-            }
-        }
-        
-    }
-}
+
 
 
 struct Journey_Previews: PreviewProvider {
