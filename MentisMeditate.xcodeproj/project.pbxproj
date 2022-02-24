@@ -20,6 +20,7 @@
 		FB682D7727C4F09D00BC59F6 /* CardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7627C4F09D00BC59F6 /* CardSheet.swift */; };
 		FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7827C54A4400BC59F6 /* Pathdetails.swift */; };
 		FB682D7B27C630CC00BC59F6 /* UseProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7A27C630CC00BC59F6 /* UseProgress.swift */; };
+		FB682D7D27C6320D00BC59F6 /* progress.json in Resources */ = {isa = PBXBuildFile; fileRef = FB682D7C27C6320D00BC59F6 /* progress.json */; };
 		FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */; };
 		FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC627B65C4E0028D07B /* ContentView.swift */; };
 		FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BC827B65C4F0028D07B /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		FB682D7627C4F09D00BC59F6 /* CardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSheet.swift; sourceTree = "<group>"; };
 		FB682D7827C54A4400BC59F6 /* Pathdetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pathdetails.swift; sourceTree = "<group>"; };
 		FB682D7A27C630CC00BC59F6 /* UseProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseProgress.swift; sourceTree = "<group>"; };
+		FB682D7C27C6320D00BC59F6 /* progress.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = progress.json; sourceTree = "<group>"; };
 		FB992BC127B65C4E0028D07B /* MentisMeditate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentisMeditate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentisMeditateApp.swift; sourceTree = "<group>"; };
 		FB992BC627B65C4E0028D07B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				FB992BC827B65C4F0028D07B /* Assets.xcassets */,
 				FB992BCA27B65C4F0028D07B /* Preview Content */,
 				FB682D7827C54A4400BC59F6 /* Pathdetails.swift */,
+				FB682D7C27C6320D00BC59F6 /* progress.json */,
 			);
 			path = MentisMeditate;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				FB992BCC27B65C4F0028D07B /* Preview Assets.xcassets in Resources */,
 				FB992BE027B6821E0028D07B /* maria-nazionale-1.jpg in Resources */,
+				FB682D7D27C6320D00BC59F6 /* progress.json in Resources */,
 				FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,16 +7,20 @@
 
 import SwiftUI
 var MentisPaths: Paths = Paths()
+var progress: UseProgress = UseProgress()
+
 @main
 struct MentisMeditateApp: App {
     var UIState: UIStateModel = UIStateModel()
     
+    
+    
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            NavigationView{
+            
                 Journey()
-            }
+            
 //            Breathing()
         }
     }

@@ -41,7 +41,29 @@ struct Pathdetails: View {
             .clipped()
             
             .edgesIgnoringSafeArea(.top)
-            
+            HStack{
+                //EXAWER
+                Text(MentisPaths.paths[id].title).font(.system(size: 36, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 0.23, green: 0.45, blue: 0.56, alpha: 1))).tracking(0.36)
+                Spacer()
+                Button {
+//                    self.showBreath.toggle()
+                    progress.progress.append(ProgressData(pathName: MentisPaths.paths[id].title, progresspercent: "0"))
+                    progress.EncodeSave()
+                
+                } label: {
+                    Text("Add")
+                        
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .padding()
+                        
+                        
+                        
+                    
+                }.foregroundColor(.white)
+                    .background(Color(#colorLiteral(red: 0.23, green: 0.45, blue: 0.56, alpha: 1)))
+                    .cornerRadius(16)
+            }.edgesIgnoringSafeArea(.top)
             
             Text(MentisPaths.paths[id].description).font(.system(size: 14, weight: .medium)).padding()
             
@@ -49,7 +71,7 @@ struct Pathdetails: View {
                 ForEach(MentisPaths.paths[id].week, id: \.self.id){ it in
                     NavigationLink(destination:
                                     SheetViewCard(subtitle: "idk", title: MentisPaths.paths[id].title, backgroundImage: Image(MentisPaths.paths[id].title), briefSummary: it.nameExercise, description: it.description), isActive: $showingSheet ){
-                        ItemRow( text: it.nameExercise, day: "monday").onTapGesture {
+                        ItemRow( text: it.nameExercise, day: it.day).onTapGesture {
                             showingSheet.toggle()
                         }
                     }
@@ -62,7 +84,8 @@ struct Pathdetails: View {
                 
             }.background(.white)
             
-        }
+        }.navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(false)
 //        .sheet(isPresented: $showingSheet){
 //
 //
@@ -73,8 +96,8 @@ struct Pathdetails: View {
     }
 }
 
-//struct Pathdetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Pathdetails(name: "exawer")
-//    }
-//}
+struct Pathdetails_Previews: PreviewProvider {
+    static var previews: some View {
+        Pathdetails(id: 0)
+    }
+}

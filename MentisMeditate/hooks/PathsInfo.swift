@@ -13,7 +13,7 @@ enum days {
 
 struct Schedule{
     var id = UUID()
-    var day : days
+    var day : String
     var nameExercise : String
     var nameAudioFile : String
     var duration : String
@@ -37,35 +37,32 @@ struct Paths {
     var tmp : [Schedule]
     
     init(){
-        self.tmp = [Schedule(day: days.monday,
-                             nameExercise: "Meditation",
+        self.tmp = [Schedule(day: "day 1",
+                             nameExercise: "Breathing",
                              nameAudioFile: "Exawer_monday",
                              duration: "7 min",
                              description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-                    Schedule(day: days.tuesday,
+                    Schedule(day: "day 2",
                              nameExercise: "Meditation",
                              nameAudioFile: "Exawer_monday",
                              duration: "7 min", description: "boo"),
-                    Schedule(day: days.wednesday,
+                    Schedule(day: "day 3",
+                             nameExercise: "Breathing",
+                             nameAudioFile: "Exawer_monday",
+                             duration: "7 min", description: "boo"),
+                    Schedule(day: "day 4",
+                             nameExercise: "Breathing",
+                             nameAudioFile: "Exawer_monday",
+                             duration: "7 min", description: "boo"),
+                    Schedule(day: "day 5",
                              nameExercise: "Meditation",
                              nameAudioFile: "Exawer_monday",
                              duration: "7 min", description: "boo"),
-                    Schedule(day: days.thursday,
+                    Schedule(day: "day 6",
                              nameExercise: "Meditation",
                              nameAudioFile: "Exawer_monday",
-                             duration: "7 min", description: "boo"),
-                    Schedule(day: days.friday,
-                             nameExercise: "Meditation",
-                             nameAudioFile: "Exawer_monday",
-                             duration: "7 min", description: "boo"),
-                    Schedule(day: days.saturday,
-                             nameExercise: "Meditation",
-                             nameAudioFile: "Exawer_monday",
-                             duration: "7 min", description: "boo"),
-                    Schedule(day: days.sunday,
-                             nameExercise: "Meditation",
-                             nameAudioFile: "Exawer_monday",
-                             duration: "7 min", description: "boo")]
+                             duration: "7 min", description: "boo")
+        ]
         
         
         self.paths.append(
