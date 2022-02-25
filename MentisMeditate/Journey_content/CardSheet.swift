@@ -77,7 +77,10 @@ struct SheetViewCard: View {
                     
                 }
                 .padding()
-                .background(.indigo)
+                .background(Color.indigo)
+//                .background(Color.black)
+//                .opacity(0.1)
+                
                 
             }
             .background(

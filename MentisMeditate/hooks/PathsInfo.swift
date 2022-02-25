@@ -74,7 +74,7 @@ struct Paths {
         
         self.tmp.removeAll()
         self.paths.append(
-            PathData(id: 1, subtitle: "Train this power for the perfect presentation!", title: "RISE AND SHINE", color: "carousel_riseandshine", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
+            PathData(id: 1, subtitle: "Get ready to become the star of the scene!", title: "RISE AND SHINE", color: "carousel_riseandshine", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 )
@@ -82,7 +82,7 @@ struct Paths {
         )
         //            Card_Carousel(id: 2, name: "INNER PARTY", cardColor: "carousel_innerparty", motto: "Train this power for to sit back and relax!"),
         self.paths.append(
-            PathData(id: 2, subtitle: "Train this power for to sit back and relax!", title: "INNER PARTY", color: "carousel_innerparty", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
+            PathData(id: 2, subtitle: "Have a relaxing party with your inner self!", title: "INNER PARTY", color: "carousel_innerparty", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 )

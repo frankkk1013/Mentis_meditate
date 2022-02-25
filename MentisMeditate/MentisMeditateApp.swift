@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVKit
+
 var MentisPaths: Paths = Paths()
 
 
