@@ -78,7 +78,10 @@ struct SheetViewCard: View {
                     
                 }
                 .padding()
-                .background(.indigo)
+                .background(Color.indigo)
+//                .background(Color.black)
+//                .opacity(0.1)
+                
                 
             }
             .background(
@@ -111,16 +114,16 @@ struct SheetViewCard: View {
                     ZStack{
                         Menu(duration){
                             Button("3 min"){
-                                self.duration = "3 min"
+                                self.duration = "1 min"
 
                                 
                             }
                                                             
                             Button("5 min"){
-                              self.duration = "5 min"
+                              self.duration = "3 min"
                             }
                             Button("7 min"){
-                                self.duration = "7 min"
+                                self.duration = "5 min"
                                 
                             }
                         

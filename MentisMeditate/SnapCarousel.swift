@@ -197,7 +197,10 @@ struct SnapCarousel: View {
                         //Train this power for your exams!
                             
                             Spacer()
-                            Text(item.name).font(.system(size: 24, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 0.48, green: 0.38, blue: 1, alpha: 1))).tracking(0.36)
+                            Text(item.name).font(.system(size: 24, weight: .bold))
+                                .foregroundColor(Color(item.cardColor))
+                                .tracking(0.36).brightness(-0.3)
+                                .saturation(3)
                             Image(item.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -391,5 +394,7 @@ struct SnapCarousel_Previews: PreviewProvider {
         SnapCarousel(UIState: UIState)
     }
 }
+
+
 
 
