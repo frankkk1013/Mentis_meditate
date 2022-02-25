@@ -202,6 +202,7 @@ struct TopView: View {
                         .foregroundColor(Color.clear)
                         .onTapGesture {
                             print(geo.safeAreaInsets.top)
+                            
                         }
                 }
                 

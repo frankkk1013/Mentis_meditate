@@ -35,6 +35,7 @@ struct SheetViewCard: View {
                         Text(self.title)
                             .font(.system(size: 40, weight: .heavy)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                             .lineLimit(3)
+                        
                     }
                     
                     Spacer()
@@ -90,6 +91,7 @@ struct SheetViewCard: View {
                     
                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .opacity(0.8)
+                    
                     
             )
             
@@ -282,6 +284,7 @@ struct CardSheet: View {
     var body: some View {
         VStack{
             TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
+              
         }
         
     }
