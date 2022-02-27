@@ -96,18 +96,16 @@ class UseProgress: ObservableObject{
                         // Assign new deck to deck list object
                         progress[index] = newDeck
                         
-                        try FileManager.default.removeItem(at: URL(string: "\(progressFolderUrl!.absoluteString)\"progres.json")!)
+                        try FileManager.default.removeItem(at: URL(string: "\(progressFolderUrl!.absoluteString)progress.json")!)
                         
                         // Encoding new deck to json
-                        let jsonData = try JSONEncoder().encode(newDeck)
+                        let jsonData = try JSONEncoder().encode(progress)
                         
                         // Creating file path and appending new name
-                        var fileURL = progressFolderUrl!.appendingPathComponent(String(newDeck.pathName))
-                        fileURL = fileURL.appendingPathExtension("json")
-                        let jsonString = String(data: jsonData, encoding: .utf8)!
                         
+                        try jsonData.write(to: URL(string: "\(progressFolderUrl!.absoluteString)progress.json")!)
                         // Writing the data in folder
-                        try jsonString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+//                        try jsonString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
                         
                         return true
                     }

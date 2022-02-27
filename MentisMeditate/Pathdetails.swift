@@ -32,6 +32,7 @@ struct Pathdetails: View {
     @State var showingSheet = false
     @ObservedObject var progress: UseProgress
     
+    
     var body: some View {
         VStack {
         
@@ -73,7 +74,7 @@ struct Pathdetails: View {
             List{
                 ForEach(MentisPaths.paths[id].week, id: \.self.id){ it in
                     NavigationLink(destination:
-                                    SheetViewCard(subtitle: "idk", title: MentisPaths.paths[id].title, backgroundImage: Image(MentisPaths.paths[id].title), briefSummary: it.nameExercise, description: it.description), isActive: $showingSheet ){
+                                    SheetViewCard(subtitle: "idk", title: MentisPaths.paths[id].title, backgroundImage: Image(MentisPaths.paths[id].title), briefSummary: it.nameExercise, description: it.description,fromPathdetails: true, color: MentisPaths.paths[id].title, progress: progress), isActive: $showingSheet ){
                         ItemRow( text: it.nameExercise, day: it.day).onTapGesture {
                             showingSheet.toggle()
                         }

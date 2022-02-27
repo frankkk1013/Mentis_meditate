@@ -72,7 +72,7 @@ struct Paths {
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 ))
         
-        self.tmp.removeAll()
+//        self.tmp.removeAll()
         self.paths.append(
             PathData(id: 1, subtitle: "Get ready to become the star of the scene!", title: "RISE AND SHINE", color: "carousel_riseandshine", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
                      week: self.tmp,

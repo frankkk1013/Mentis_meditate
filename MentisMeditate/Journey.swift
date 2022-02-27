@@ -36,8 +36,18 @@ struct Journey: View {
             NavigationView{
                 ScrollView{
                     VStack(alignment:.leading){
+                        
                         ForEach(id, id: \.self){ index in
-                            TopCard(subtitle: MentisPaths.paths[index].subtitle, title: MentisPaths.paths[index].title, backgroundImage: Image(MentisPaths.paths[index].title), briefSummary: "5 SENSE DRILL", description: "", color: MentisPaths.paths[index].color, percentage: progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].progresspercent )
+                            
+                            TopCard(subtitle: MentisPaths.paths[index].subtitle, title: MentisPaths.paths[index].title, backgroundImage: Image(MentisPaths.paths[index].title),
+                                    briefSummary:MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of:"false" )!].nameExercise ,
+                                    description: MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of: "false")!].description, color: MentisPaths.paths[index].color,
+                                    percentage: progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].progresspercent , progress: progress)
+                               
+                               
+                            
+                            
+                               
                             
                         }
                         

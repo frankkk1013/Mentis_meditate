@@ -12,8 +12,11 @@ struct SheetViewCard: View {
     var backgroundImage: Image
     var briefSummary: String
     var description: String
+    var fromPathdetails: Bool
+    var color: String
     
 //    @Binding var isShow: Bool
+    @ObservedObject var progress: UseProgress
     @State private var translation = CGSize.zero
     @State private var showBreath = false
     @State var duration: String = "3 min"
@@ -59,6 +62,16 @@ struct SheetViewCard: View {
                     Spacer()
                     NavigationLink("", isActive: $showBreath, destination: {Breathing()})
                     Button {
+                        if (!fromPathdetails){
+                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent =
+                            String(Int(progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent)! + (100/6))
+                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone[
+                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone.firstIndex{
+                                $0 == "false"}!] = "true"
+                            progress.handleUpd(newDeck: progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!])
+                            }
+                        
+                        
                         self.showBreath.toggle()
                     
                     } label: {
@@ -77,7 +90,7 @@ struct SheetViewCard: View {
                     
                 }
                 .padding()
-                .background(Color.indigo)
+                .background(Color(color))
 //                .background(Color.black)
 //                .opacity(0.1)
                 
@@ -178,6 +191,7 @@ struct TopCard: View {
     @State var percentage : String
     @State private var showBreath = false
     @State private var showingSheet = false
+    @ObservedObject var progress: UseProgress
     
 //    @Binding var isShow: Bool
     
@@ -229,6 +243,14 @@ struct TopCard: View {
                         Spacer()
                         NavigationLink("", isActive: $showBreath, destination: {Breathing()})
                         Button {
+                           
+                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent =
+                                String(Int(progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent)! + (100/6))
+                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone[
+                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone.firstIndex{
+                                    $0 == "false"}!] = "true"
+                            progress.handleUpd(newDeck: progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!])
+                               
                             self.showBreath.toggle()
                         
                         } label: {
@@ -283,7 +305,7 @@ struct TopCard: View {
             .onTapGesture {
                 showingSheet.toggle()
             }.sheet(isPresented: $showingSheet){
-                SheetViewCard(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description)
+                SheetViewCard(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description, fromPathdetails: false,color: color, progress: progress )
                     
             }
             
@@ -294,18 +316,19 @@ struct TopCard: View {
 }
 
 
-
-struct CardSheet: View {
-    var body: some View {
-        VStack{
-            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.", color : "indigo", percentage: "")
-        }
-        
-    }
-}
-
-struct CardSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        CardSheet()
-    }
-}
+//
+//struct CardSheet: View {
+//    @ObservedObject var progress: UseProgress
+//    var body: some View {
+//        VStack{
+//            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.", color : "indigo", percentage: "", progress: progress )
+//        }
+//
+//    }
+//}
+//
+//struct CardSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardSheet()
+//    }
+//}

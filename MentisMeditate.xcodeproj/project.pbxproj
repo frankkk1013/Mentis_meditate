@@ -19,7 +19,6 @@
 		FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2727BBD0EF0097C63C /* DetailTextView.swift */; };
 		FB612E2A27BBD0FF0097C63C /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2927BBD0FF0097C63C /* Source.swift */; };
 		FB612E2C27BBD1360097C63C /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2B27BBD1360097C63C /* Journey.swift */; };
-		FB612E2F27BBD1F50097C63C /* StepperView in Frameworks */ = {isa = PBXBuildFile; productRef = FB612E2E27BBD1F50097C63C /* StepperView */; };
 		FB682D7527C4D70C00BC59F6 /* PathsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7427C4D70C00BC59F6 /* PathsInfo.swift */; };
 		FB682D7727C4F09D00BC59F6 /* CardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7627C4F09D00BC59F6 /* CardSheet.swift */; };
 		FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7827C54A4400BC59F6 /* Pathdetails.swift */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB612E2F27BBD1F50097C63C /* StepperView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +189,6 @@
 			);
 			name = MentisMeditate;
 			packageProductDependencies = (
-				FB612E2E27BBD1F50097C63C /* StepperView */,
 			);
 			productName = MentisMeditate;
 			productReference = FB992BC127B65C4E0028D07B /* MentisMeditate.app */;
@@ -407,14 +404,17 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ale.MentisMeditate;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.MentisMeditate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -436,14 +436,17 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ale.MentisMeditate;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.MentisMeditate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -484,14 +487,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FB612E2E27BBD1F50097C63C /* StepperView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB612E2D27BBD1F50097C63C /* XCRemoteSwiftPackageReference "StepperView" */;
-			productName = StepperView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB992BB927B65C4E0028D07B /* Project object */;
 }
