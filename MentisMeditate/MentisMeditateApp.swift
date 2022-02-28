@@ -9,11 +9,13 @@ import SwiftUI
 import AVKit
 
 var MentisPaths: Paths = Paths()
-var progress: UseProgress = UseProgress()
+
 
 @main
 struct MentisMeditateApp: App {
     var UIState: UIStateModel = UIStateModel()
+    @StateObject var progress: UseProgress = UseProgress()
+    
     
     
     
@@ -21,7 +23,7 @@ struct MentisMeditateApp: App {
         WindowGroup {
 //            ContentView()
             
-                Journey()
+                Journey(progress: progress)
             
 //            Breathing()
         }

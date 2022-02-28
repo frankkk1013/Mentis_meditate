@@ -41,11 +41,11 @@ struct Paths {
                              nameExercise: "Breathing",
                              nameAudioFile: "Exawer_monday",
                              duration: "7 min",
-                             description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
+                             description: "relax during this exercise, slow down "),
                     Schedule(day: "day 2",
                              nameExercise: "Meditation",
                              nameAudioFile: "Exawer_monday",
-                             duration: "7 min", description: "boo"),
+                             duration: "7 min", description: "a"),
                     Schedule(day: "day 3",
                              nameExercise: "Breathing",
                              nameAudioFile: "Exawer_monday",
@@ -72,7 +72,7 @@ struct Paths {
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 ))
         
-        self.tmp.removeAll()
+//        self.tmp.removeAll()
         self.paths.append(
             PathData(id: 1, subtitle: "Get ready to become the star of the scene!", title: "RISE AND SHINE", color: "carousel_riseandshine", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
                      week: self.tmp,

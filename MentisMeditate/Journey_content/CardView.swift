@@ -8,38 +8,38 @@
 
 import SwiftUI
 import Combine
-import StepperView
 
 
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct IndicatorImageView: View {
-    var name:String
-    var body: some View {
-        ZStack {
-            Circle()
-                .foregroundColor(Color.white)
-                .overlay(Image(name)
-                            .resizable()
-                            .frame(width: 30, height: 30))
-                .frame(width: 40, height: 40)
-        }
-        
-    }
-}
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct CustomStepTextView: View {
-    var text:String
-    var body: some View {
-        VStack {
-            TextView(text: text, font: Font.system(size: 16, weight: Font.Weight.regular))
-                .foregroundColor(Color.indigo)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .offset(x: -15)
-        }
-    }
-}
+//@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+//struct IndicatorImageView: View {
+//    var name:String
+//    var body: some View {
+//        ZStack {
+//            Circle()
+//                .foregroundColor(Color.white)
+//                .overlay(Image(name)
+//                            .resizable()
+//                            .frame(width: 30, height: 30))
+//                .frame(width: 40, height: 40)
+//        }
+//        
+//    }
+//}
+//
+//@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+//struct CustomStepTextView: View {
+//    var text:String
+//    var body: some View {
+//        VStack {
+//            TextView(text: text, font: Font.system(size: 16, weight: Font.Weight.regular))
+//                .foregroundColor(Color.indigo)
+//                .frame(maxWidth: .infinity, alignment: .leading)
+//                .offset(x: -15)
+//        }
+//    }
+//}
 
 
     

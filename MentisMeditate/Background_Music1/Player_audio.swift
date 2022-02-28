@@ -125,12 +125,15 @@ struct MusicPlayer : View {
                 self.finish = true
             }
         }.background (
-            Image(uiImage: self.data.count == 0 ? UIImage(named: self.backgrounds[self.current])! : UIImage(data: self.data)!)
-            .resizable()
+            Image(uiImage: self.data.count == 0 ? UIImage(named: self.backgrounds[self.current])! : UIImage(data: self.data)!).resizable()
+                
+                
             .edgesIgnoringSafeArea(.all)
+                
             .opacity(0.75)
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-               )
+                
+        ).navigationBarBackButtonHidden(false)
     }
     
     func getData(){
