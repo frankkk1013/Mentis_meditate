@@ -11,7 +11,6 @@
 		784F778527C79D1A00B4C07C /* Suono campane di Chiesa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 784F778427C79D1A00B4C07C /* Suono campane di Chiesa.mp3 */; };
 		784F778727C79D3000B4C07C /* Verso del cane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 784F778627C79D3000B4C07C /* Verso del cane.mp3 */; };
 		784F778B27C7A04600B4C07C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F778A27C7A04600B4C07C /* DataSource.swift */; };
-		78529E5827BCF442001F241E /* Med_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78529E5727BCF442001F241E /* Med_settings.swift */; };
 		FB57A83627BD168D007E0A65 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57A83527BD168D007E0A65 /* Progress.swift */; };
 		FB57A83927BE5306007E0A65 /* Breathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57A83827BE5306007E0A65 /* Breathing.swift */; };
 		FB612E2227BBD0730097C63C /* Background_music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2127BBD0730097C63C /* Background_music.swift */; };
@@ -24,6 +23,7 @@
 		FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7827C54A4400BC59F6 /* Pathdetails.swift */; };
 		FB682D7B27C630CC00BC59F6 /* UseProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7A27C630CC00BC59F6 /* UseProgress.swift */; };
 		FB682D7D27C6320D00BC59F6 /* progress.json in Resources */ = {isa = PBXBuildFile; fileRef = FB682D7C27C6320D00BC59F6 /* progress.json */; };
+		FB96F93427CCD821000AF6F3 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96F93327CCD821000AF6F3 /* Meditation.swift */; };
 		FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */; };
 		FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC627B65C4E0028D07B /* ContentView.swift */; };
 		FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BC827B65C4F0028D07B /* Assets.xcassets */; };
@@ -37,7 +37,6 @@
 		784F778427C79D1A00B4C07C /* Suono campane di Chiesa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Suono campane di Chiesa.mp3"; sourceTree = "<group>"; };
 		784F778627C79D3000B4C07C /* Verso del cane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Verso del cane.mp3"; sourceTree = "<group>"; };
 		784F778A27C7A04600B4C07C /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		78529E5727BCF442001F241E /* Med_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_settings.swift; sourceTree = "<group>"; };
 		FB57A83527BD168D007E0A65 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		FB57A83827BE5306007E0A65 /* Breathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breathing.swift; sourceTree = "<group>"; };
 		FB612E2127BBD0730097C63C /* Background_music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_music.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		FB682D7827C54A4400BC59F6 /* Pathdetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pathdetails.swift; sourceTree = "<group>"; };
 		FB682D7A27C630CC00BC59F6 /* UseProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseProgress.swift; sourceTree = "<group>"; };
 		FB682D7C27C6320D00BC59F6 /* progress.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = progress.json; sourceTree = "<group>"; };
+		FB96F93327CCD821000AF6F3 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		FB992BC127B65C4E0028D07B /* MentisMeditate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentisMeditate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentisMeditateApp.swift; sourceTree = "<group>"; };
 		FB992BC627B65C4E0028D07B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,14 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78529E5627BCF425001F241E /* med_settings */ = {
-			isa = PBXGroup;
-			children = (
-				78529E5727BCF442001F241E /* Med_settings.swift */,
-			);
-			path = med_settings;
-			sourceTree = "<group>";
-		};
 		FB34C01E27C2DDDF007BF6E7 /* hooks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +116,14 @@
 			path = Journey_content;
 			sourceTree = "<group>";
 		};
+		FB96F93227CCD80F000AF6F3 /* meditation */ = {
+			isa = PBXGroup;
+			children = (
+				FB96F93327CCD821000AF6F3 /* Meditation.swift */,
+			);
+			path = meditation;
+			sourceTree = "<group>";
+		};
 		FB992BB827B65C4E0028D07B = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +145,10 @@
 		FB992BC327B65C4E0028D07B /* MentisMeditate */ = {
 			isa = PBXGroup;
 			children = (
+				FB96F93227CCD80F000AF6F3 /* meditation */,
 				FB34C01E27C2DDDF007BF6E7 /* hooks */,
 				FB57A83727BE52F3007E0A65 /* breathing */,
 				FB57A83427BD1677007E0A65 /* progress */,
-				78529E5627BCF425001F241E /* med_settings */,
 				FB612E2427BBD0BC0097C63C /* Journey_content */,
 				FB612E2027BBD04B0097C63C /* Background_Music1 */,
 				FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */,
@@ -254,6 +254,7 @@
 				FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */,
 				784F778B27C7A04600B4C07C /* DataSource.swift in Sources */,
 				FB612E2227BBD0730097C63C /* Background_music.swift in Sources */,
+				FB96F93427CCD821000AF6F3 /* Meditation.swift in Sources */,
 				FB682D7527C4D70C00BC59F6 /* PathsInfo.swift in Sources */,
 				FB992BC727B65C4E0028D07B /* ContentView.swift in Sources */,
 				FB682D7B27C630CC00BC59F6 /* UseProgress.swift in Sources */,
@@ -266,7 +267,6 @@
 				784F778127C795B400B4C07C /* Player_audio.swift in Sources */,
 				FB612E2827BBD0EF0097C63C /* DetailTextView.swift in Sources */,
 				FB612E2627BBD0D50097C63C /* CardView.swift in Sources */,
-				78529E5827BCF442001F241E /* Med_settings.swift in Sources */,
 				FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
