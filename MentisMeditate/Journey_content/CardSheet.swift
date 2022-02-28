@@ -14,6 +14,7 @@ struct SheetViewCard: View {
     var description: String
     var fromPathdetails: Bool
     var color: String
+    var navigationItem: UINavigationItem
     
 //    @Binding var isShow: Bool
     @ObservedObject var progress: UseProgress
@@ -179,6 +180,14 @@ struct SheetViewCard: View {
         }
         
     }
+    
+//    func getDestination(from navItem: UINavigationItem) -> AnyView {
+//            if navItem.destination is ZoneList.Type {
+//                return AnyView(ZonesList())
+//            } else {
+//                return AnyView(ListStyles())
+//            }
+//        }
 }
 
 struct TopCard: View {
