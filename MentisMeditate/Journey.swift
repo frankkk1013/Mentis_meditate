@@ -19,18 +19,18 @@ struct Journey: View {
     
     @State var id: [Int] = []
     
-    
+   
     
     var body: some View {
         
         TabView{
             NavigationView{
-                SnapCarousel(progress: progress).navigationTitle("Choose your Power")
+                SnapCarousel(progress: progress).navigationTitle((NSLocalizedString("choose your power", comment: "")))
             }
             
             .tabItem{
                 Image(systemName: "seal")
-                Text("Powers")
+                Text((NSLocalizedString("Powers", comment: "")))
             }
             
             NavigationView{

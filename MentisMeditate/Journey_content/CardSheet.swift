@@ -14,7 +14,7 @@ struct SheetViewCard: View {
     var description: String
     var fromPathdetails: Bool
     var color: String
-    var navigationItem: UINavigationItem
+//    var navigationItem: UINavigationItem
     
 //    @Binding var isShow: Bool
     @ObservedObject var progress: UseProgress
@@ -328,21 +328,21 @@ struct TopCard: View {
 
 
 
-struct CardSheet: View {
-    var body: some View {
-        VStack{
-            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
-              
-        }
-        
-    }
-}
+//struct CardSheet: View {
+//    var body: some View {
+//        VStack{
+//            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
+//
+//        }
+//
+//    }
+//}
 
-struct CardSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        CardSheet()
-    }
-}
+//struct CardSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardSheet()
+//    }
+//}
 
 
 //

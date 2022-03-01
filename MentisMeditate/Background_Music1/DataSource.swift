@@ -17,12 +17,12 @@ struct Category: Identifiable {
 }
 
 var categories : [Category] = [
-Category(image:  "city", details: "City"),
-Category(image: "foresta", details: "Forest"),
-Category(image: "sunset", details: "Sunset"),
-Category(image:  "pioggia", details: "Rainy Day"),
-Category(image:  "libreria", details: "Library"),
-Category(image: "mare", details: "Sea")
+    Category(image:  "city", details: NSLocalizedString("City", comment: "")),
+Category(image: "foresta", details: NSLocalizedString("Forest", comment: "")),
+Category(image: "sunset", details: NSLocalizedString("Sunset", comment: "")),
+Category(image:  "pioggia", details: NSLocalizedString("Rainy Day", comment: "")),
+Category(image:  "libreria", details: NSLocalizedString("Library", comment: "")),
+Category(image: "mare", details: NSLocalizedString("Sea", comment: ""))
 //Category(image:  "city", details: "City"),
 //Category(image:  "city", details: "City"),
 //Category(image: "foresta", details: "Forest"),
