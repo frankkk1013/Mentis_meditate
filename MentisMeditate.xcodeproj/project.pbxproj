@@ -12,6 +12,8 @@
 		784F778727C79D3000B4C07C /* Verso del cane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 784F778627C79D3000B4C07C /* Verso del cane.mp3 */; };
 		784F778B27C7A04600B4C07C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F778A27C7A04600B4C07C /* DataSource.swift */; };
 		78529E5827BCF442001F241E /* Med_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78529E5727BCF442001F241E /* Med_settings.swift */; };
+		78A64C4027CF73140072D458 /* Completamente.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78A64C3F27CF73140072D458 /* Completamente.mp3 */; };
+		78A64C4227CF73220072D458 /* Emotional Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78A64C4127CF73220072D458 /* Emotional Music.mp3 */; };
 		FB57A83627BD168D007E0A65 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57A83527BD168D007E0A65 /* Progress.swift */; };
 		FB57A83927BE5306007E0A65 /* Breathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57A83827BE5306007E0A65 /* Breathing.swift */; };
 		FB612E2227BBD0730097C63C /* Background_music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2127BBD0730097C63C /* Background_music.swift */; };
@@ -39,6 +41,8 @@
 		784F778627C79D3000B4C07C /* Verso del cane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Verso del cane.mp3"; sourceTree = "<group>"; };
 		784F778A27C7A04600B4C07C /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		78529E5727BCF442001F241E /* Med_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_settings.swift; sourceTree = "<group>"; };
+		78A64C3F27CF73140072D458 /* Completamente.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Completamente.mp3; sourceTree = "<group>"; };
+		78A64C4127CF73220072D458 /* Emotional Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Emotional Music.mp3"; sourceTree = "<group>"; };
 		FB57A83527BD168D007E0A65 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		FB57A83827BE5306007E0A65 /* Breathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breathing.swift; sourceTree = "<group>"; };
 		FB612E2127BBD0730097C63C /* Background_music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_music.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				784F778427C79D1A00B4C07C /* Suono campane di Chiesa.mp3 */,
 				784F778627C79D3000B4C07C /* Verso del cane.mp3 */,
+				78A64C3F27CF73140072D458 /* Completamente.mp3 */,
+				78A64C4127CF73220072D458 /* Emotional Music.mp3 */,
 				FB992BC327B65C4E0028D07B /* MentisMeditate */,
 				FB992BC227B65C4E0028D07B /* Products */,
 			);
@@ -240,8 +246,10 @@
 			files = (
 				FB992BCC27B65C4F0028D07B /* Preview Assets.xcassets in Resources */,
 				FB992BE027B6821E0028D07B /* maria-nazionale-1.jpg in Resources */,
+				78A64C4227CF73220072D458 /* Emotional Music.mp3 in Resources */,
 				FB682D7D27C6320D00BC59F6 /* progress.json in Resources */,
 				784F778527C79D1A00B4C07C /* Suono campane di Chiesa.mp3 in Resources */,
+				78A64C4027CF73140072D458 /* Completamente.mp3 in Resources */,
 				FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */,
 				784F778727C79D3000B4C07C /* Verso del cane.mp3 in Resources */,
 			);
