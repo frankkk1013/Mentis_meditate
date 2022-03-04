@@ -5,7 +5,7 @@ struct Background_music: View {
     @State var text: String = ""
    
     var body: some View {
-        
+        NavigationView {
             ScrollView {
                 ForEach(0..<(categories.count % 2 == 0 ? categories.count / 2 : categories.count / 2 + 1)) { i in
                     HStack {
@@ -17,7 +17,7 @@ struct Background_music: View {
                 }
                 .padding()
             }
-        
+        }
     }
 }
 
@@ -34,6 +34,9 @@ struct FullImageRow3: View {
     let category: Category
     var columns: [GridItem] =
     Array(repeating: .init(.flexible()), count: 2)
+//    @State var expand = false
+//    @Namespace var animation
+    
     
     var body: some View {
         ZStack(alignment: .trailing){
@@ -49,12 +52,11 @@ struct FullImageRow3: View {
                         Rectangle()
                             .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
                             .cornerRadius(15)
-                            .opacity(0.45)
+                            .opacity(0.30)
                     )
-            })
-                .fullScreenCover(isPresented: self.$showModalAdd)
-            {
-                Player_audio();
+            }).fullScreenCover(isPresented: self.$showModalAdd){
+                MusicPlayer(showModal: $showModalAdd)
+                    
             }.foregroundColor(Color.black)
             
             Text(category.details)
@@ -65,8 +67,5 @@ struct FullImageRow3: View {
                 .padding(.top, 75)
                 .padding(10)
         }
-//        .background{
-//            NavigationLink("", isActive: $showModalAdd, destination: {Player_audio()})
-//        }
     }
 }
