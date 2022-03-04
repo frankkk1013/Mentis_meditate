@@ -30,6 +30,8 @@ struct Pathdetails: View {
     var id : Int
     var tapped : Bool = false
     @State var showingSheet = false
+    @ObservedObject var progress: UseProgress
+    
     
     var body: some View {
         VStack {
@@ -38,7 +40,8 @@ struct Pathdetails: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             
-            .clipped()
+            
+//            .clipped()
             
             .edgesIgnoringSafeArea(.top)
             HStack{
@@ -47,8 +50,7 @@ struct Pathdetails: View {
                 Spacer()
                 Button {
 //                    self.showBreath.toggle()
-                    progress.progress.append(ProgressData(pathName: MentisPaths.paths[id].title, progresspercent: "0"))
-                    progress.EncodeSave()
+                    progress.createProgress(pathName: MentisPaths.paths[id].title)
                 
                 } label: {
                     Text("Add")
@@ -64,13 +66,15 @@ struct Pathdetails: View {
                     .background(Color(#colorLiteral(red: 0.23, green: 0.45, blue: 0.56, alpha: 1)))
                     .cornerRadius(16)
             }.edgesIgnoringSafeArea(.top)
+                .padding(.trailing)
+                .padding(.leading)
             
             Text(MentisPaths.paths[id].description).font(.system(size: 14, weight: .medium)).padding()
             
             List{
                 ForEach(MentisPaths.paths[id].week, id: \.self.id){ it in
                     NavigationLink(destination:
-                                    SheetViewCard(subtitle: "idk", title: MentisPaths.paths[id].title, backgroundImage: Image(MentisPaths.paths[id].title), briefSummary: it.nameExercise, description: it.description), isActive: $showingSheet ){
+                                    SheetViewCard(subtitle: "idk", title: MentisPaths.paths[id].title, backgroundImage: Image(MentisPaths.paths[id].title), briefSummary: it.nameExercise, description: it.description,fromPathdetails: true, color: MentisPaths.paths[id].title, progress: progress), isActive: $showingSheet ){
                         ItemRow( text: it.nameExercise, day: it.day).onTapGesture {
                             showingSheet.toggle()
                         }
@@ -96,8 +100,8 @@ struct Pathdetails: View {
     }
 }
 
-struct Pathdetails_Previews: PreviewProvider {
-    static var previews: some View {
-        Pathdetails(id: 0)
-    }
-}
+//struct Pathdetails_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Pathdetails(id: 0)
+//    }
+//}

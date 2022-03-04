@@ -5,7 +5,7 @@ struct Background_music: View {
     @State var text: String = ""
    
     var body: some View {
-        NavigationView {
+        
             ScrollView {
                 ForEach(0..<(categories.count % 2 == 0 ? categories.count / 2 : categories.count / 2 + 1)) { i in
                     HStack {
@@ -17,7 +17,7 @@ struct Background_music: View {
                 }
                 .padding()
             }
-        }
+        
     }
 }
 
@@ -54,9 +54,16 @@ struct FullImageRow3: View {
                             .cornerRadius(15)
                             .opacity(0.30)
                     )
+<<<<<<< HEAD
             }).fullScreenCover(isPresented: self.$showModalAdd){
                 MusicPlayer(showModal: $showModalAdd)
                     
+=======
+            })
+                .fullScreenCover(isPresented: self.$showModalAdd)
+            {
+                Player_audio();
+>>>>>>> 5e0c44d5fa0ce89349a803506b705ecc51286735
             }.foregroundColor(Color.black)
             
             Text(category.details)
@@ -67,5 +74,8 @@ struct FullImageRow3: View {
                 .padding(.top, 75)
                 .padding(10)
         }
+//        .background{
+//            NavigationLink("", isActive: $showModalAdd, destination: {Player_audio()})
+//        }
     }
 }

@@ -133,6 +133,7 @@ struct MusicPlayer: View {
                 self.finish = true
             }
         }.background (
+<<<<<<< HEAD
             Image(uiImage: self.data.count == 0 ? UIImage(named: self.backgrounds[self.current])! : UIImage(data: self.data)!)
 //            Image(category.image)
                 .resizable()
@@ -153,6 +154,17 @@ struct MusicPlayer: View {
                 }
                 .padding(32)
             }
+=======
+            Image(uiImage: self.data.count == 0 ? UIImage(named: self.backgrounds[self.current])! : UIImage(data: self.data)!).resizable()
+                
+                
+            .edgesIgnoringSafeArea(.all)
+                
+            .opacity(0.75)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                
+        ).navigationBarBackButtonHidden(false)
+>>>>>>> 5e0c44d5fa0ce89349a803506b705ecc51286735
     }
     
     func getData(){
