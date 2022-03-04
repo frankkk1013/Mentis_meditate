@@ -12,12 +12,8 @@ struct SheetViewCard: View {
     var backgroundImage: Image
     var briefSummary: String
     var description: String
-    var fromPathdetails: Bool
-    var color: String
-//    var navigationItem: UINavigationItem
     
 //    @Binding var isShow: Bool
-    @ObservedObject var progress: UseProgress
     @State private var translation = CGSize.zero
     @State private var showBreath = false
     @State var duration: String = "3 min"
@@ -39,7 +35,6 @@ struct SheetViewCard: View {
                         Text(self.title)
                             .font(.system(size: 40, weight: .heavy)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                             .lineLimit(3)
-                        
                     }
                     
                     Spacer()
@@ -64,16 +59,6 @@ struct SheetViewCard: View {
                     Spacer()
                     NavigationLink("", isActive: $showBreath, destination: {Breathing()})
                     Button {
-                        if (!fromPathdetails){
-                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent =
-                            String(Int(progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent)! + (100/6))
-                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone[
-                            progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone.firstIndex{
-                                $0 == "false"}!] = "true"
-                            progress.handleUpd(newDeck: progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!])
-                            }
-                        
-                        
                         self.showBreath.toggle()
                     
                     } label: {
@@ -92,10 +77,7 @@ struct SheetViewCard: View {
                     
                 }
                 .padding()
-                .background(Color(color))
-//                .background(Color.black)
-//                .opacity(0.1)
-                
+                .background(.indigo)
                 
             }
             .background(
@@ -108,7 +90,6 @@ struct SheetViewCard: View {
                     
                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .opacity(0.8)
-                    
                     
             )
             
@@ -127,17 +108,17 @@ struct SheetViewCard: View {
                     Spacer()
                     ZStack{
                         Menu(duration){
-                            Button("3 min "){
-                                self.duration = "3 min "
+                            Button("3 min"){
+                                self.duration = "3 min"
 
                                 
                             }
                                                             
-                            Button("5 min "){
-                              self.duration = "5 min "
+                            Button("5 min"){
+                              self.duration = "5 min"
                             }
-                            Button("7 min "){
-                                self.duration = "7 min "
+                            Button("7 min"){
+                                self.duration = "7 min"
                                 
                             }
                         
@@ -159,7 +140,7 @@ struct SheetViewCard: View {
                     Spacer()
                     ZStack{
                         Menu(voice ? "Voice" : "No Voice"){
-                            Button("   Voice"){
+                            Button("Voice"){
                                 self.voice = true
                                 
                             }
@@ -167,7 +148,6 @@ struct SheetViewCard: View {
                                 self.voice = false
                                 
                             }
-                            
                     }.background( Rectangle()
                                     .frame(width:95, height: 50)
                                     .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
@@ -182,14 +162,6 @@ struct SheetViewCard: View {
         }
         
     }
-    
-//    func getDestination(from navItem: UINavigationItem) -> AnyView {
-//            if navItem.destination is ZoneList.Type {
-//                return AnyView(ZonesList())
-//            } else {
-//                return AnyView(ListStyles())
-//            }
-//        }
 }
 
 struct TopCard: View {
@@ -198,11 +170,8 @@ struct TopCard: View {
     var backgroundImage: Image
     var briefSummary: String
     var description : String
-    var color: String
-    @State var percentage : String
     @State private var showBreath = false
     @State private var showingSheet = false
-    @ObservedObject var progress: UseProgress
     
 //    @Binding var isShow: Bool
     
@@ -217,16 +186,15 @@ struct TopCard: View {
                     VStack(alignment: .leading) {
                         
                         
-                        Text(percentage).font(.system(size: 40, weight: .heavy)).foregroundColor(Color(color)).tracking(0.38).multilineTextAlignment(.center)
-                            .colorInvert()
+                        Text("56%").font(.system(size: 40, weight: .heavy)).foregroundColor(.black).tracking(0.38).multilineTextAlignment(.center)
 
                         //EXAWER
                         Spacer()
 
                         
                         Text(self.title)
-                            .font(.system(size: 40, weight: .heavy)).foregroundColor(Color(color)).tracking(0.38).multilineTextAlignment(.center)
-                            .lineLimit(3).colorInvert()
+                            .font(.system(size: 40, weight: .heavy)).foregroundColor(.black).tracking(0.38).multilineTextAlignment(.center)
+                            .lineLimit(3)
                     }
                     
                     Spacer()
@@ -236,64 +204,46 @@ struct TopCard: View {
                 
                 Spacer()
                 
-                ZStack{
-                    HStack(alignment: .center) {
-                        VStack(alignment: .leading){
-                        Text(self.briefSummary)
-                                .foregroundColor(Color(color))
-                            .bold()
+                
+                HStack(alignment: .center) {
+                    VStack(alignment: .leading){
+                    Text(self.briefSummary)
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.caption)
+                        .lineLimit(3)
+                        Text("morning")
+                            .foregroundColor(.white)
                             .font(.caption)
                             .lineLimit(3)
-                            .colorInvert().opacity(1)
-                            Text("morning")
-                                .foregroundColor(Color(color))
-                                .font(.caption)
-                                .lineLimit(3)
-                                .colorInvert()
-                        }
-                        Spacer()
-                        NavigationLink("", isActive: $showBreath, destination: {Breathing()})
-                        Button {
-                           
-                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent =
-                                String(Int(progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].progresspercent)! + (100/6))
-                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone[
-                                progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!].exerciseDone.firstIndex{
-                                    $0 == "false"}!] = "true"
-                            progress.handleUpd(newDeck: progress.progress[progress.progress.firstIndex{$0.pathName == self.title}!])
-                               
-                            self.showBreath.toggle()
-                        
-                        } label: {
-                            Text("Start")
-                                .padding()
-                                .foregroundColor(.indigo)
-                                .font(.footnote)
-                                
-                                
-                                
-                            
-                        }.foregroundColor(.white)
-                            .background(Color.white)
-                            .cornerRadius(17)
-                        
-                            
-                        
-                        
                     }
-                    .padding()
-                    .background(Color(color))
+                    Spacer()
+                    NavigationLink("", isActive: $showBreath, destination: {Breathing()})
+                    Button {
+                        self.showBreath.toggle()
                     
+                    } label: {
+                        Text("Start")
+                            .padding()
+                            .foregroundColor(.indigo)
+                            .font(.footnote)
+                            
+                            
+                            
                         
+                    }.foregroundColor(.white)
+                        .background(Color.white)
+                        .cornerRadius(17)
                     
                     
-                }.background(RoundedRectangle(cornerRadius: 30, style: .continuous).colorInvert())
-                
+                }
+                .padding()
+                .background(.indigo)
                 
             }
             .frame(width: UIScreen.main.bounds.width - 40)
             .frame(height: 300) //300
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous)).opacity(8)
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .background(
                 self.backgroundImage
                     .resizable()
@@ -316,7 +266,7 @@ struct TopCard: View {
             .onTapGesture {
                 showingSheet.toggle()
             }.sheet(isPresented: $showingSheet){
-                SheetViewCard(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description, fromPathdetails: false,color: color, progress: progress )
+                SheetViewCard(subtitle: self.subtitle, title: self.title, backgroundImage: self.backgroundImage, briefSummary: self.briefSummary, description: self.description)
                     
             }
             
@@ -328,36 +278,17 @@ struct TopCard: View {
 
 
 
-//struct CardSheet: View {
-//    var body: some View {
-//        VStack{
-//            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
-//
-//        }
-//
-//    }
-//}
+struct CardSheet: View {
+    var body: some View {
+        VStack{
+            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
+        }
+        
+    }
+}
 
-//struct CardSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardSheet()
-//    }
-//}
-
-
-//
-//struct CardSheet: View {
-//    @ObservedObject var progress: UseProgress
-//    var body: some View {
-//        VStack{
-//            TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.", color : "indigo", percentage: "", progress: progress )
-//        }
-//
-//    }
-//}
-//
-//struct CardSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardSheet()
-//    }
-//}
+struct CardSheet_Previews: PreviewProvider {
+    static var previews: some View {
+        CardSheet()
+    }
+}

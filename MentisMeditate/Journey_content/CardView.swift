@@ -8,38 +8,38 @@
 
 import SwiftUI
 import Combine
+import StepperView
 
 
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct IndicatorImageView: View {
+    var name:String
+    var body: some View {
+        ZStack {
+            Circle()
+                .foregroundColor(Color.white)
+                .overlay(Image(name)
+                            .resizable()
+                            .frame(width: 30, height: 30))
+                .frame(width: 40, height: 40)
+        }
+        
+    }
+}
 
-//@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-//struct IndicatorImageView: View {
-//    var name:String
-//    var body: some View {
-//        ZStack {
-//            Circle()
-//                .foregroundColor(Color.white)
-//                .overlay(Image(name)
-//                            .resizable()
-//                            .frame(width: 30, height: 30))
-//                .frame(width: 40, height: 40)
-//        }
-//        
-//    }
-//}
-//
-//@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-//struct CustomStepTextView: View {
-//    var text:String
-//    var body: some View {
-//        VStack {
-//            TextView(text: text, font: Font.system(size: 16, weight: Font.Weight.regular))
-//                .foregroundColor(Color.indigo)
-//                .frame(maxWidth: .infinity, alignment: .leading)
-//                .offset(x: -15)
-//        }
-//    }
-//}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct CustomStepTextView: View {
+    var text:String
+    var body: some View {
+        VStack {
+            TextView(text: text, font: Font.system(size: 16, weight: Font.Weight.regular))
+                .foregroundColor(Color.black)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .offset(x: -15)
+        }
+    }
+}
 
 
     
@@ -202,7 +202,6 @@ struct TopView: View {
                         .foregroundColor(Color.clear)
                         .onTapGesture {
                             print(geo.safeAreaInsets.top)
-                            
                         }
                 }
                 
@@ -215,8 +214,7 @@ struct TopView: View {
 //                            .lineLimit(1)
                         
                         Text(self.title)
-                            .font(.system(size: 40, weight: .heavy))
-                            .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
+                            .font(.system(size: 40, weight: .heavy)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.38).multilineTextAlignment(.center)
                             .lineLimit(3)
                     }
                     
@@ -270,8 +268,7 @@ struct TopView: View {
 struct ExpandableView: View {
     var description: String
     @State var duration: String = "3 min"
-//    @State var voice: Bool = false
-    @State var voice: String = "Voice"
+    @State var voice: Bool = false
     
     
     @Binding var isShow: Bool
@@ -295,6 +292,8 @@ struct ExpandableView: View {
                     Menu(duration){
                         Button("3 min"){
                             self.duration = "3 min"
+
+                            
                         }
                                                         
                         Button("5 min"){
@@ -306,10 +305,9 @@ struct ExpandableView: View {
                         }
                     
 
-                    }.background(Rectangle()
+                    }.background( Rectangle()
                                     .frame(width:95, height: 50)
-                                    .foregroundColor(Color.indigo)
-//                                    .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                    .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
                                     .cornerRadius(15)
                                     .opacity(0.20))
                 }
@@ -322,25 +320,18 @@ struct ExpandableView: View {
                     .bold()
                 Spacer()
                 ZStack{
-                    Menu(voice){
+                    Menu(voice ? "Voice" : "No Voice"){
+                        Button("Voice"){
+                            self.voice = true
+                            
+                        }
                         Button("No Voice"){
-                            self.voice = "No voice"
-                            
-                        }
-                        Button("Voice 1"){
-                            self.voice = "Voice 1"
-                            
-                        }
-                        
-                        Button("Voice 2"){
-                            self.voice = "Voice 2"
+                            self.voice = false
                             
                         }
                 }.background( Rectangle()
                                 .frame(width:95, height: 50)
-                                .foregroundColor(Color.indigo)
-                              
-//                                .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+                                .foregroundColor(Color(red: 88/255, green: 86/255, blue: 214/255))
                                 .cornerRadius(15)
                                 .opacity(0.20))
                 }

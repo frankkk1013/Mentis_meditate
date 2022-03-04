@@ -62,21 +62,12 @@ struct Category: Identifiable {
 }
 
 var categories : [Category] = [
-<<<<<<< HEAD
 Category(image:  "Londra", details: "City", songs: "Suono campane di Chiesa"),
 //Category(image: "foresta", details: "Forest"),
 Category(image: "Sunset", details: "Sunset", songs: "Verso del cane"),
 Category(image:  "pioggia", details: "Rainy Day", songs: "Completamente"),
 //Category(image:  "libreria", details: "Library"),
 Category(image: "mare", details: "Sea", songs: "Emotional Music")
-=======
-    Category(image:  "city", details: NSLocalizedString("City", comment: "")),
-Category(image: "foresta", details: NSLocalizedString("Forest", comment: "")),
-Category(image: "sunset", details: NSLocalizedString("Sunset", comment: "")),
-Category(image:  "pioggia", details: NSLocalizedString("Rainy Day", comment: "")),
-Category(image:  "libreria", details: NSLocalizedString("Library", comment: "")),
-Category(image: "mare", details: NSLocalizedString("Sea", comment: ""))
->>>>>>> 5e0c44d5fa0ce89349a803506b705ecc51286735
 //Category(image:  "city", details: "City"),
 //Category(image:  "city", details: "City"),
 //Category(image: "foresta", details: "Forest"),
