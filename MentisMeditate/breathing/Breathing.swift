@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct Breathing: View {
     @State private var breathIn = false
@@ -18,6 +19,7 @@ struct Breathing: View {
     @State private var hideHold = false
     @State private var displaySecondHold = false
     @State private var hideSecondHold = false
+    @State private var tabBar: UITabBar?
     
     var body: some View {
         //Ellipse 5
@@ -55,8 +57,9 @@ struct Breathing: View {
             }
             ZStack {
                 Text("Breath Out")
-                    .foregroundColor(.black)
+                    .foregroundColor(.indigo).brightness(-0.5)
                     .scaleEffect(1)
+                    .font(.title3)
                     .opacity(displayBreathOut ? 1 : 0)
                     .opacity(hideBreathOut ? 0 : 1)
                     .onAppear(){
@@ -70,8 +73,9 @@ struct Breathing: View {
                 }
                 
                 Text("Hold") // Second hold
-                    .foregroundColor(.black)
+                    .foregroundColor(.indigo).brightness(-0.5)
                     .scaleEffect(1)
+                    .font(.title3)
                     .opacity(displaySecondHold ? 1 : 0)
                     .opacity(hideSecondHold ? 0 : 1)
                     .onAppear(){
@@ -85,8 +89,9 @@ struct Breathing: View {
                 }
                 
                 Text("Hold")
-                    .foregroundColor(.black)
+                    .foregroundColor(.indigo).brightness(-0.5)
                     .scaleEffect(1)
+                    .font(.title3)
                     .opacity(displayHold ? 1 : 0)
                     .opacity(hideHold ? 0 : 1)
                     .onAppear(){
@@ -100,14 +105,18 @@ struct Breathing: View {
                 }
                 
                 Text("Breath In")
-                    .foregroundColor(.black)
+                    .foregroundColor(.indigo).brightness(-0.5)
                     .opacity(hideBreathIn ? 0 : 1)
+                    .font(.title3)
                     .animation(Animation.easeInOut(duration: 0.4).delay(4))
                     .onAppear(){
                         self.hideBreathIn.toggle()
                 }
             }
-        }.navigationBarTitleDisplayMode(.inline)
+        }.navigationBarTitleDisplayMode(.inline).introspectTabBarController { UITabBarController in tabBar = UITabBarController.tabBar
+            self.tabBar?.isHidden = true } .onDisappear() { self.tabBar?.isHidden = false }
+        
+           
             
             
     }

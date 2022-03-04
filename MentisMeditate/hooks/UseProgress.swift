@@ -118,6 +118,39 @@ class UseProgress: ObservableObject{
         }
     }
     
+    func handleDel(newDeck: ProgressData) -> Bool {
+        do {
+            for (index, deck) in progress.enumerated(){
+                if(deck.pathName == newDeck.pathName){
+                    
+                    // Delete action
+                    
+                        // Update new deck
+                        // Assign new deck to deck list object
+                        progress.remove(at: index)
+                        
+                        try FileManager.default.removeItem(at: URL(string: "\(progressFolderUrl!.absoluteString)progress.json")!)
+                        
+                        // Encoding new deck to json
+                        let jsonData = try JSONEncoder().encode(progress)
+                        
+                        // Creating file path and appending new name
+                        
+                        try jsonData.write(to: URL(string: "\(progressFolderUrl!.absoluteString)progress.json")!)
+                        // Writing the data in folder
+//                        try jsonString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                        
+                        return true
+                    }
+                
+            }
+            return false
+        } catch {
+            print(error)
+            return false
+        }
+    }
+    
     func createProgress(pathName: String) -> Bool {
         
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

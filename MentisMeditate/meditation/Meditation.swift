@@ -10,6 +10,8 @@ import SwiftUI
 struct Meditation: View {
     
     @State var positionX = -300
+    @State private var tabBar: UITabBar?
+    
     
     var body: some View {
         ZStack{
@@ -42,7 +44,12 @@ struct Meditation: View {
             Text("motivation").font(.system(size: 36, weight: .semibold)).foregroundColor(Color(#colorLiteral(red: 0.35, green: 0.34, blue: 0.84, alpha: 1))).tracking(0.36).multilineTextAlignment(.center)
             
             
-        }
+        }.navigationBarTitleDisplayMode(.inline)
+            .edgesIgnoringSafeArea(.top)
+            .statusBar(hidden: true)
+            .introspectTabBarController { UITabBarController in tabBar = UITabBarController.tabBar
+                            self.tabBar?.isHidden = true } .onDisappear() { self.tabBar?.isHidden = false }
+
         
     }
 }

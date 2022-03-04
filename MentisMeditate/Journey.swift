@@ -14,35 +14,59 @@ struct Journey: View {
     @ObservedObject var control = CardView_Control()
     @State private var showNew = false
     @State var title : String = ""
-    @ObservedObject var progress: UseProgress
+    @StateObject var progress: UseProgress
     @State var paths: [String] = []
-    
+    @State var tabSelection = 0
     @State var id: [Int] = []
+    @State var selection: Int = 0
+    
     
     
     
     var body: some View {
         
-        TabView{
+        TabView(selection: $tabSelection){
             NavigationView{
-                SnapCarousel(progress: progress).navigationTitle("Choose your Power")
+                SnapCarousel(progress: progress, tabSelection: $tabSelection).navigationTitle(Text("Choose your Power"))
+                
             }
             
             .tabItem{
-                Image(systemName: "seal")
+                Image(systemName: "gyroscope")
                 Text("Powers")
-            }
+            }.tag(0)
             
             NavigationView{
                 ScrollView{
                     VStack(alignment:.leading){
                         
                         ForEach(id, id: \.self){ index in
+                            if progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of:"false" ) != nil
+                            {
+                                TopCard(subtitle: MentisPaths.paths[index].subtitle, title: MentisPaths.paths[index].title, backgroundImage: Image(MentisPaths.paths[index].title),
+                                        briefSummary:MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of:"false" )!].nameExercise ,
+                                        description: MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of: "false")!].description, color: MentisPaths.paths[index].color,
+                                        percentage: progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].progresspercent , progress: progress)
+                                    .onDisappear{
+                                        
+                                        //controlla
+                                        if (progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}) != nil{
+                                            if progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of:"false" ) == nil{
+                                            progress.handleDel(newDeck: progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!])
+                                            }
+        
+                                            
+                                        }
+                                        
+                                        
+                                        
+                                }
+                            }
                             
-                            TopCard(subtitle: MentisPaths.paths[index].subtitle, title: MentisPaths.paths[index].title, backgroundImage: Image(MentisPaths.paths[index].title),
-                                    briefSummary:MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of:"false" )!].nameExercise ,
-                                    description: MentisPaths.paths[index].week[progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].exerciseDone.firstIndex(of: "false")!].description, color: MentisPaths.paths[index].color,
-                                    percentage: progress.progress[progress.progress.firstIndex{$0.pathName == MentisPaths.paths[index].title}!].progresspercent , progress: progress)
+                            
+                            
+                            
+                            
                                
                                
                             
@@ -50,16 +74,6 @@ struct Journey: View {
                                
                             
                         }
-                        
-                        
-                        
-                        
-                        //                        TopCard(subtitle: "hello", title: "MOTIVATION", backgroundImage: Image("Rise"), briefSummary: "5 SENSE DRILL", description: "Motivate yourself thanks to this exercise ")
-                        //
-                        //
-                        //                        TopCard(subtitle: "hello", title: "EXAWER", backgroundImage: Image("luna"), briefSummary: "5 SENSE DRILL", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.")
-                        //
-                        //                        NavigationLink("", isActive: $showNew, destination: { SnapCarousel().navigationBarHidden(true)}
                         
                         
                         
@@ -76,13 +90,15 @@ struct Journey: View {
                         paths.forEach { path in
                             id.append(MentisPaths.paths.firstIndex{$0.title == path}!)
                         }
-                        
-                        
-                        
+
+
+
                         print(id)
-                        
-                        
+
+
                     }
+        
+           
             }
             
             .tabItem {
@@ -92,7 +108,7 @@ struct Journey: View {
                     
                 }
                 
-            }
+            }.tag(1)
             
             
             
@@ -101,49 +117,28 @@ struct Journey: View {
                 
             }
             .tabItem {
+                
                 Image(systemName: "headphones")
                 
                 Text("Sounds")
-            }
+            }.tag(2)
             
-            //            NavigationView{
-            //                Progress().navigationTitle("Progress")
-            //
-            //            }
-            //            .tabItem {
-            //                Image(systemName: "scale.3d")
-            //
-            //                Text("Progress")
-            //            }
+          
             
             
             
             
         }
-        .accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
-        
-        
-        
-        
-        //        .navigationBarHidden(self.control.anyTriggered)
-        //        .toolbar {
-        //            ToolbarItem(placement: .navigationBarTrailing ){
-        //                Button{
-        //                    self.showNew.toggle()
-        //
-        //
-        //                }label:{
-        //                    Image(systemName: "gyroscope")
-        //                        .resizable()
-        //                        .frame(width: 30, height: 30)
-        //                        .foregroundColor(.indigo)
-        //                }
-        //
-        //
-        //
-        //
-        //            }
-        //        }
+//        .padding(.top)
+            .accentColor(Color(red: 88/255, green: 86/255, blue: 214/255))
+            .edgesIgnoringSafeArea(.top)
+            .onAppear{
+                UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.darkGray]
+
+                //Use this if NavigationBarTitle is with displayMode = .inline
+                UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.gray]
+            }
+            
         
     }
     

@@ -67,7 +67,7 @@ struct Paths {
         
         self.paths.append(
             
-            PathData(id : 0,subtitle: "Train this power for your exams!", title: "EXAWER", color: "carousel_exawer", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
+            PathData(id : 0,subtitle: "Train this power for your exams!", title: "EXAWER", color: "carousel_exawer", description: "You're preparing for the exam, and your nerves are running high. These exercises using the five senses is a great way to keep your emotions under control.",
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 ))

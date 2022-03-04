@@ -14,6 +14,7 @@ struct SnapCarousel: View {
     @State var namePower: Int = -2
     @State var counter: Int = 0
     @ObservedObject var progress: UseProgress
+    @Binding var tabSelection : Int
     
     
     var body: some View {
@@ -60,7 +61,7 @@ struct SnapCarousel: View {
                         //Train this power for your exams!
                             
                             Spacer()
-                            Text(item.name).font(.system(size: 24, weight: .bold))
+                            Text(item.name).font(.system(size: 27, weight: .bold))
                                 .foregroundColor(Color(item.cardColor))
                                 .tracking(0.36).brightness(-0.3)
                                 .saturation(3)
@@ -70,7 +71,7 @@ struct SnapCarousel: View {
                                 .frame(width: 360, height: 262)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .frame(width: 313, height: 262)
-                            Text(item.motto).font(.system(size: 12, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 0.42, green: 0.42, blue: 0.42, alpha: 1))).tracking(0.36)
+                            Text(item.motto).font(.system(size: 13, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 0.42, green: 0.42, blue: 0.42, alpha: 1))).tracking(0.36)
                             Spacer()
                             
 
@@ -91,10 +92,10 @@ struct SnapCarousel: View {
                 }
             }.environmentObject(self.UIState)
                 .background{
-                    NavigationLink("", isActive: $showDetails, destination: { Pathdetails(id: namePower, progress: progress)})
+                    NavigationLink("", isActive: $showDetails, destination: { Pathdetails(tabSelection: $tabSelection,id: namePower, progress: progress)})
                 }
                 
-        }.navigationBarTitle("Choose your power")
+        }
            
     }
 }
