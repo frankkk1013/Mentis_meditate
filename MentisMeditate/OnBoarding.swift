@@ -23,7 +23,7 @@ struct OnBoarding: View {
                 
                 VStack(alignment: .leading) {
                     NewDetail(image: "gyroscope", imageColor: Color("INNER PARTY"), title: "Powers", description: "You can see and choose you power and become a super hero")
-                    NewDetail(image: "leaf.fill", imageColor: Color("RISE AND SHINE"), title: "Journey", description: "You can add your choosen super hero path in the Journey tab                               ")
+                    NewDetail(image: "leaf.fill", imageColor: Color.orange, title: "Journey", description: "You can add your choosen super hero path in the Journey tab                               ")
                     NewDetail(image: "headphones", imageColor: Color("EXAWER"), title: "Sounds", description: "You can select a background sound while you are studying or just chilling")
             }
 

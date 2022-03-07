@@ -47,6 +47,7 @@ struct widget_meEntryView : View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(
+           
             Text("EXAWER").font(.system(size: 22, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 0.23, green: 0.45, blue: 0.56, alpha: 1))).padding().brightness(-0.3).frame( alignment: .center), alignment: .topLeading
             
         ).background{
