@@ -97,14 +97,14 @@ struct Paths {
         
         self.paths.append(
             
-            PathData(id : 0,subtitle: "Train this power for your exams!", title: "EXAWER", color: "carousel_exawer", description: "You're preparing for the exam, and your nerves are running high. These exercises using the five senses is a great way to keep your emotions under control.",
+            PathData(id : 0,subtitle:  NSLocalizedString("Train this power for your exams!", comment: ""), title: "EXAWER", color: "carousel_exawer", description: NSLocalizedString("Are you struggling for your next exam? This is the ideal path for you to stay motivated and focused while taking on your challenge!", comment: ""),
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 ))
         
 //        self.tmp.removeAll()
         self.paths.append(
-            PathData(id: 1, subtitle: "Get ready to become the star of the scene!", title: "RISE AND SHINE", color: "carousel_riseandshine", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
+            PathData(id: 1, subtitle: NSLocalizedString("Get ready to become the star of the scene!", comment: ""), title: "RISE AND SHINE", color: "carousel_riseandshine", description:  NSLocalizedString("Are you ready to become the star of your presentation? Get comfortable and follow this quick path to gain confidence and steal the spotlight!", comment: ""),
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 )
@@ -112,7 +112,7 @@ struct Paths {
         )
         //            Card_Carousel(id: 2, name: "INNER PARTY", cardColor: "carousel_innerparty", motto: "Train this power for to sit back and relax!"),
         self.paths.append(
-            PathData(id: 2, subtitle: "Have a relaxing party with your inner self!", title: "INNER PARTY", color: "carousel_innerparty", description: "You're preparing for the exam, and our nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control.",
+            PathData(id: 2, subtitle: NSLocalizedString("Have a relaxing party with your inner self!", comment: ""), title: "INNER PARTY", color: "carousel_innerparty", description: NSLocalizedString("Let's toast to your accomplishments! You've worked hard and now it's time to celebrate, relax and be kind to yourself. Follow this path and relax!", comment: ""),
                      week: self.tmp,
                      keywords: ["hurry", "worry", "anxiety", "stress", "exam"]
                 )
