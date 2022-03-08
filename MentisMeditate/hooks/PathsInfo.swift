@@ -42,7 +42,7 @@ struct Paths {
         self.tmp = [Schedule(day: "day 1",
                              nameExercise: "Meditation",
                              title: "5 SENSES DRILL", nameAudioFile: "Exawer_monday",
-                             duration: "3min",
+                             duration: "3 min",
                              description: "You're preparing for the exam, and YOUR nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control. ",
                             text: ["When you’re feeling an overwhelming emotion, it can completely capture you",
                                    " And when you notice you’re feeling overwhelmed,  this exercise allows you to bring yourself to the here and now.",
