@@ -86,26 +86,46 @@
  "City" = "Città";
 
  /* No comment provided by engineer. */
- "Forest" = "Foresta";
-
- /* No comment provided by engineer. */
  "Sunset" = "Tramonto";
 
  /* No comment provided by engineer. */
  "Rainy Day" = "Pioggia";
 
  /* No comment provided by engineer. */
- "Library" = "Biblioteca";
-
- /* No comment provided by engineer. */
  "Sea" = "Mare";
 
  /* No comment provided by engineer. */
+"You're preparing for the exam, and your nerves are running high. This morning meditation exercise using the five senses is a great way to keep your emotions under control. " = "Ti stai preparando per l'esame e senti di avere i nervi alle stelle. Questo esercizio di meditazione mattutino è un ottimo modo per tenere sotto controllo le tue emozioni attraverso l’uso dei cinque sensi.";
 
  /* No comment provided by engineer. */
+"Meditation can help you sharpen your concentration even if you’re feeling under pressure. Start this exercise to increase your focus as you’re approaching your tasks of the day." = "La meditazione può aiutarti ad affinare la tua concentrazione anche se ti senti sotto pressione. Inizia questo esercizio per aumentare la concentrazione prima di affrontare i tuoi compiti della giornata.";
 
  /* No comment provided by engineer. */
+"The meditation session that hypes your motivation as you're facing your task." = "Una sessione di meditazione che ti aiuterà ad aumentare la tua motivazione quando devi affrontare una nuova scadenza.";
 
  /* No comment provided by engineer. */
+"As you’re preparing for your task, you’re suffering from low-see esteem or you just want to focus on it. Do this exercise to boost your self-confidence." = "Mentre ti stai preparando per il tuo compito, potresti soffrire di scarsa autostima o probabilmente vuoi semplicemente concentrarti su di essa. Fai questo esercizio per aumentare la fiducia in te stesso.";
 
+/* No comment provided by engineer. */
+"Take a moment to decompress and release your stressful thoughts." = "Prenditi un momento per decomprimere e liberarti dei pensieri stressanti.";
 
+/* No comment provided by engineer. */
+"It’s test day. Take some moments to meditate and catch your breath so you’ll be ready, confident and relaxed when you have to perform." = "È il giorno della prova. Prenditi qualche momento per meditare e riprendere fiato in modo da essere pronto, sicuro di te e rilassato quando devi iniziare.";
+
+/* No comment provided by engineer. */
+"day 1" = "giorno 1";
+
+/* No comment provided by engineer. */
+"day 2" = "giorno 2";
+
+/* No comment provided by engineer. */
+"day 3" = "giorno 3";
+
+/* No comment provided by engineer. */
+"day 4" = "giorno 4";
+
+/* No comment provided by engineer. */
+"day 5" = "giorno 5";
+
+/* No comment provided by engineer. */
+"day 6" = "giorno 6";
