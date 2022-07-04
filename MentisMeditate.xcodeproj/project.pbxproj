@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		784F778127C795B400B4C07C /* Player_audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F777E27C795B400B4C07C /* Player_audio.swift */; };
+		784F778B27C7A04600B4C07C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F778A27C7A04600B4C07C /* DataSource.swift */; };
+		FB34157027D0B6E30043F689 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = FB34156F27D0B6E30043F689 /* Introspect */; };
+		FB34157227D0C3D60043F689 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB34157127D0C3D60043F689 /* OnBoarding.swift */; };
+		FB388BCA27D89FC6009ACBF9 /* londra1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BC827D89FC6009ACBF9 /* londra1.m4a */; };
+		FB388BCB27D89FC6009ACBF9 /* pioggia1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BC927D89FC6009ACBF9 /* pioggia1.m4a */; };
+		FB388BCE27D89FE0009ACBF9 /* mare1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BCC27D89FE0009ACBF9 /* mare1.m4a */; };
+		FB388BCF27D89FE0009ACBF9 /* sunset1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BCD27D89FE0009ACBF9 /* sunset1.m4a */; };
+		FB388BD827D8A064009ACBF9 /* SOOTHING MOMENT ita 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD027D8A063009ACBF9 /* SOOTHING MOMENT ita 3min.m4a */; };
+		FB388BD927D8A064009ACBF9 /* RELAXATION BREATHING ita 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD127D8A063009ACBF9 /* RELAXATION BREATHING ita 5min.m4a */; };
+		FB388BDA27D8A064009ACBF9 /* SOOTHING MOMENT ita 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD227D8A063009ACBF9 /* SOOTHING MOMENT ita 5min.m4a */; };
+		FB388BDB27D8A064009ACBF9 /* SOOTHING MOMENT eng 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD327D8A063009ACBF9 /* SOOTHING MOMENT eng 3min.m4a */; };
+		FB388BDC27D8A064009ACBF9 /* SELF-CONFIDENCE BOOST eng 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD427D8A064009ACBF9 /* SELF-CONFIDENCE BOOST eng 3min.m4a */; };
+		FB388BDD27D8A064009ACBF9 /* RELAXATION BREATHING eng 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD527D8A064009ACBF9 /* RELAXATION BREATHING eng 5min.m4a */; };
+		FB388BDE27D8A064009ACBF9 /* SOOTHING MOMENT eng 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD627D8A064009ACBF9 /* SOOTHING MOMENT eng 5min.m4a */; };
+		FB388BDF27D8A064009ACBF9 /* SELF-CONFIDENCE BOOST ita 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BD727D8A064009ACBF9 /* SELF-CONFIDENCE BOOST ita 3min.m4a */; };
+		FB388BEA27D8A083009ACBF9 /* SELF-CONFIDENCE BOOST eng 7min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE027D8A083009ACBF9 /* SELF-CONFIDENCE BOOST eng 7min.m4a */; };
+		FB388BEB27D8A083009ACBF9 /* ENHANCED FOCUS ita 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE127D8A083009ACBF9 /* ENHANCED FOCUS ita 3min.m4a */; };
+		FB388BEC27D8A083009ACBF9 /* HYPER MOTIVATION eng 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE227D8A083009ACBF9 /* HYPER MOTIVATION eng 5min.m4a */; };
+		FB388BED27D8A083009ACBF9 /* SELF-CONFIDENCE BOOST ita 7min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE327D8A083009ACBF9 /* SELF-CONFIDENCE BOOST ita 7min.m4a */; };
+		FB388BEE27D8A083009ACBF9 /* 5 SENSES DRILL eng 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE427D8A083009ACBF9 /* 5 SENSES DRILL eng 3min.m4a */; };
+		FB388BEF27D8A083009ACBF9 /* ENHANCED FOCUS ita 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE527D8A083009ACBF9 /* ENHANCED FOCUS ita 5min.m4a */; };
+		FB388BF027D8A083009ACBF9 /* ENHANCED FOCUS eng 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE627D8A083009ACBF9 /* ENHANCED FOCUS eng 3min.m4a */; };
+		FB388BF127D8A083009ACBF9 /* HYPER MOTIVATION ita 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE727D8A083009ACBF9 /* HYPER MOTIVATION ita 5min.m4a */; };
+		FB388BF227D8A083009ACBF9 /* ENHANCED FOCUS eng 5min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE827D8A083009ACBF9 /* ENHANCED FOCUS eng 5min.m4a */; };
+		FB388BF327D8A083009ACBF9 /* 5 SENSES DRILL ita 3min.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB388BE927D8A083009ACBF9 /* 5 SENSES DRILL ita 3min.m4a */; };
+		FB57A83927BE5306007E0A65 /* Breathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB57A83827BE5306007E0A65 /* Breathing.swift */; };
+		FB59E17827D76F09006878BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB59E17627D76F09006878BE /* Localizable.strings */; };
+		FB612E2227BBD0730097C63C /* Background_music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2127BBD0730097C63C /* Background_music.swift */; };
+		FB612E2C27BBD1360097C63C /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB612E2B27BBD1360097C63C /* Journey.swift */; };
+		FB682D7527C4D70C00BC59F6 /* PathsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7427C4D70C00BC59F6 /* PathsInfo.swift */; };
+		FB682D7727C4F09D00BC59F6 /* CardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7627C4F09D00BC59F6 /* CardSheet.swift */; };
+		FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7827C54A4400BC59F6 /* Pathdetails.swift */; };
+		FB682D7B27C630CC00BC59F6 /* UseProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB682D7A27C630CC00BC59F6 /* UseProgress.swift */; };
+		FB682D7D27C6320D00BC59F6 /* progress.json in Resources */ = {isa = PBXBuildFile; fileRef = FB682D7C27C6320D00BC59F6 /* progress.json */; };
+		FB96F93427CCD821000AF6F3 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96F93327CCD821000AF6F3 /* Meditation.swift */; };
+		FB98A01227D20CBD001CC5B8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB989FF927D20C63001CC5B8 /* WidgetKit.framework */; };
+		FB98A01327D20CBD001CC5B8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB989FFB27D20C63001CC5B8 /* SwiftUI.framework */; };
+		FB98A01627D20CBD001CC5B8 /* widget_me.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98A01527D20CBD001CC5B8 /* widget_me.swift */; };
+		FB98A01827D20CBF001CC5B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB98A01727D20CBF001CC5B8 /* Assets.xcassets */; };
+		FB98A01C27D20CBF001CC5B8 /* widget_meExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB98A01127D20CBD001CC5B8 /* widget_meExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */; };
+		FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BC827B65C4F0028D07B /* Assets.xcassets */; };
+		FB992BCC27B65C4F0028D07B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB992BCB27B65C4F0028D07B /* Preview Assets.xcassets */; };
+		FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB992BDD27B6636B0028D07B /* SnapCarousel.swift */; };
+		FB992BE027B6821E0028D07B /* maria-nazionale-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB98A01A27D20CBF001CC5B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB992BB927B65C4E0028D07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB98A01027D20CBD001CC5B8;
+			remoteInfo = widget_meExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB98A00927D20C65001CC5B8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB98A01C27D20CBF001CC5B8 /* widget_meExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		784F777E27C795B400B4C07C /* Player_audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player_audio.swift; sourceTree = "<group>"; };
+		784F778A27C7A04600B4C07C /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		FB34157127D0C3D60043F689 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		FB388BC827D89FC6009ACBF9 /* londra1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = londra1.m4a; sourceTree = "<group>"; };
+		FB388BC927D89FC6009ACBF9 /* pioggia1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = pioggia1.m4a; sourceTree = "<group>"; };
+		FB388BCC27D89FE0009ACBF9 /* mare1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = mare1.m4a; sourceTree = "<group>"; };
+		FB388BCD27D89FE0009ACBF9 /* sunset1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sunset1.m4a; sourceTree = "<group>"; };
+		FB388BD027D8A063009ACBF9 /* SOOTHING MOMENT ita 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SOOTHING MOMENT ita 3min.m4a"; sourceTree = "<group>"; };
+		FB388BD127D8A063009ACBF9 /* RELAXATION BREATHING ita 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RELAXATION BREATHING ita 5min.m4a"; sourceTree = "<group>"; };
+		FB388BD227D8A063009ACBF9 /* SOOTHING MOMENT ita 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SOOTHING MOMENT ita 5min.m4a"; sourceTree = "<group>"; };
+		FB388BD327D8A063009ACBF9 /* SOOTHING MOMENT eng 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SOOTHING MOMENT eng 3min.m4a"; sourceTree = "<group>"; };
+		FB388BD427D8A064009ACBF9 /* SELF-CONFIDENCE BOOST eng 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SELF-CONFIDENCE BOOST eng 3min.m4a"; sourceTree = "<group>"; };
+		FB388BD527D8A064009ACBF9 /* RELAXATION BREATHING eng 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RELAXATION BREATHING eng 5min.m4a"; sourceTree = "<group>"; };
+		FB388BD627D8A064009ACBF9 /* SOOTHING MOMENT eng 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SOOTHING MOMENT eng 5min.m4a"; sourceTree = "<group>"; };
+		FB388BD727D8A064009ACBF9 /* SELF-CONFIDENCE BOOST ita 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SELF-CONFIDENCE BOOST ita 3min.m4a"; sourceTree = "<group>"; };
+		FB388BE027D8A083009ACBF9 /* SELF-CONFIDENCE BOOST eng 7min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SELF-CONFIDENCE BOOST eng 7min.m4a"; path = "../../Telegram Desktop/SELF-CONFIDENCE BOOST eng 7min.m4a"; sourceTree = "<group>"; };
+		FB388BE127D8A083009ACBF9 /* ENHANCED FOCUS ita 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ENHANCED FOCUS ita 3min.m4a"; path = "../../Telegram Desktop/ENHANCED FOCUS ita 3min.m4a"; sourceTree = "<group>"; };
+		FB388BE227D8A083009ACBF9 /* HYPER MOTIVATION eng 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HYPER MOTIVATION eng 5min.m4a"; path = "../../Telegram Desktop/HYPER MOTIVATION eng 5min.m4a"; sourceTree = "<group>"; };
+		FB388BE327D8A083009ACBF9 /* SELF-CONFIDENCE BOOST ita 7min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SELF-CONFIDENCE BOOST ita 7min.m4a"; path = "../../Telegram Desktop/SELF-CONFIDENCE BOOST ita 7min.m4a"; sourceTree = "<group>"; };
+		FB388BE427D8A083009ACBF9 /* 5 SENSES DRILL eng 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "5 SENSES DRILL eng 3min.m4a"; path = "../../Telegram Desktop/5 SENSES DRILL eng 3min.m4a"; sourceTree = "<group>"; };
+		FB388BE527D8A083009ACBF9 /* ENHANCED FOCUS ita 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ENHANCED FOCUS ita 5min.m4a"; path = "../../Telegram Desktop/ENHANCED FOCUS ita 5min.m4a"; sourceTree = "<group>"; };
+		FB388BE627D8A083009ACBF9 /* ENHANCED FOCUS eng 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ENHANCED FOCUS eng 3min.m4a"; path = "../../Telegram Desktop/ENHANCED FOCUS eng 3min.m4a"; sourceTree = "<group>"; };
+		FB388BE727D8A083009ACBF9 /* HYPER MOTIVATION ita 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HYPER MOTIVATION ita 5min.m4a"; path = "../../Telegram Desktop/HYPER MOTIVATION ita 5min.m4a"; sourceTree = "<group>"; };
+		FB388BE827D8A083009ACBF9 /* ENHANCED FOCUS eng 5min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ENHANCED FOCUS eng 5min.m4a"; path = "../../Telegram Desktop/ENHANCED FOCUS eng 5min.m4a"; sourceTree = "<group>"; };
+		FB388BE927D8A083009ACBF9 /* 5 SENSES DRILL ita 3min.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "5 SENSES DRILL ita 3min.m4a"; path = "../../Telegram Desktop/5 SENSES DRILL ita 3min.m4a"; sourceTree = "<group>"; };
+		FB388BF527D8B98C009ACBF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB57A83827BE5306007E0A65 /* Breathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breathing.swift; sourceTree = "<group>"; };
+		FB59E17727D76F09006878BE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB612E2127BBD0730097C63C /* Background_music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_music.swift; sourceTree = "<group>"; };
+		FB612E2B27BBD1360097C63C /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		FB682D7427C4D70C00BC59F6 /* PathsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsInfo.swift; sourceTree = "<group>"; };
+		FB682D7627C4F09D00BC59F6 /* CardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSheet.swift; sourceTree = "<group>"; };
+		FB682D7827C54A4400BC59F6 /* Pathdetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pathdetails.swift; sourceTree = "<group>"; };
+		FB682D7A27C630CC00BC59F6 /* UseProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseProgress.swift; sourceTree = "<group>"; };
+		FB682D7C27C6320D00BC59F6 /* progress.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = progress.json; sourceTree = "<group>"; };
+		FB96F93327CCD821000AF6F3 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
+		FB989FF927D20C63001CC5B8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FB989FFB27D20C63001CC5B8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FB98A01127D20CBD001CC5B8 /* widget_meExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget_meExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB98A01527D20CBD001CC5B8 /* widget_me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget_me.swift; sourceTree = "<group>"; };
+		FB98A01727D20CBF001CC5B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB98A01927D20CBF001CC5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB992BC127B65C4E0028D07B /* MentisMeditate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentisMeditate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentisMeditateApp.swift; sourceTree = "<group>"; };
+		FB992BC827B65C4F0028D07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB992BCB27B65C4F0028D07B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB992BDD27B6636B0028D07B /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
+		FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "maria-nazionale-1.jpg"; sourceTree = "<group>"; };
+		FBB242B227D69BF200E1D32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB98A00E27D20CBD001CC5B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB98A01327D20CBD001CC5B8 /* SwiftUI.framework in Frameworks */,
+				FB98A01227D20CBD001CC5B8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB992BBE27B65C4E0028D07B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB34157027D0B6E30043F689 /* Introspect in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB34C01E27C2DDDF007BF6E7 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				FB682D7427C4D70C00BC59F6 /* PathsInfo.swift */,
+				FB682D7A27C630CC00BC59F6 /* UseProgress.swift */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		FB567BF42873116B004A8C69 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				FB388BC927D89FC6009ACBF9 /* pioggia1.m4a */,
+				FB388BC827D89FC6009ACBF9 /* londra1.m4a */,
+				FB388BCD27D89FE0009ACBF9 /* sunset1.m4a */,
+				FB388BCC27D89FE0009ACBF9 /* mare1.m4a */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		FB57A83727BE52F3007E0A65 /* breathing */ = {
+			isa = PBXGroup;
+			children = (
+				FB57A83827BE5306007E0A65 /* Breathing.swift */,
+			);
+			path = breathing;
+			sourceTree = "<group>";
+		};
+		FB612E2027BBD04B0097C63C /* Background_Music1 */ = {
+			isa = PBXGroup;
+			children = (
+				FB612E2127BBD0730097C63C /* Background_music.swift */,
+				784F777E27C795B400B4C07C /* Player_audio.swift */,
+				784F778A27C7A04600B4C07C /* DataSource.swift */,
+			);
+			path = Background_Music1;
+			sourceTree = "<group>";
+		};
+		FB612E2427BBD0BC0097C63C /* Journey_content */ = {
+			isa = PBXGroup;
+			children = (
+				FB682D7627C4F09D00BC59F6 /* CardSheet.swift */,
+			);
+			path = Journey_content;
+			sourceTree = "<group>";
+		};
+		FB96F93227CCD80F000AF6F3 /* meditation */ = {
+			isa = PBXGroup;
+			children = (
+				FB96F93327CCD821000AF6F3 /* Meditation.swift */,
+			);
+			path = meditation;
+			sourceTree = "<group>";
+		};
+		FB989FF827D20C63001CC5B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB989FF927D20C63001CC5B8 /* WidgetKit.framework */,
+				FB989FFB27D20C63001CC5B8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB98A01427D20CBD001CC5B8 /* widget_me */ = {
+			isa = PBXGroup;
+			children = (
+				FB98A01527D20CBD001CC5B8 /* widget_me.swift */,
+				FB98A01727D20CBF001CC5B8 /* Assets.xcassets */,
+				FB98A01927D20CBF001CC5B8 /* Info.plist */,
+			);
+			path = widget_me;
+			sourceTree = "<group>";
+		};
+		FB992BB827B65C4E0028D07B = {
+			isa = PBXGroup;
+			children = (
+				FBB2428F27D6920600E1D32F /* Exawer_audio */,
+				FB992BC327B65C4E0028D07B /* MentisMeditate */,
+				FB98A01427D20CBD001CC5B8 /* widget_me */,
+				FB989FF827D20C63001CC5B8 /* Frameworks */,
+				FB992BC227B65C4E0028D07B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB992BC227B65C4E0028D07B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB992BC127B65C4E0028D07B /* MentisMeditate.app */,
+				FB98A01127D20CBD001CC5B8 /* widget_meExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB992BC327B65C4E0028D07B /* MentisMeditate */ = {
+			isa = PBXGroup;
+			children = (
+				FB567BF42873116B004A8C69 /* audio */,
+				FBB242B227D69BF200E1D32F /* Info.plist */,
+				FB59E17627D76F09006878BE /* Localizable.strings */,
+				FB96F93227CCD80F000AF6F3 /* meditation */,
+				FB34C01E27C2DDDF007BF6E7 /* hooks */,
+				FB57A83727BE52F3007E0A65 /* breathing */,
+				FB612E2427BBD0BC0097C63C /* Journey_content */,
+				FB612E2027BBD04B0097C63C /* Background_Music1 */,
+				FB992BDF27B6821E0028D07B /* maria-nazionale-1.jpg */,
+				FB992BC427B65C4E0028D07B /* MentisMeditateApp.swift */,
+				FB612E2B27BBD1360097C63C /* Journey.swift */,
+				FB682D7827C54A4400BC59F6 /* Pathdetails.swift */,
+				FB992BDD27B6636B0028D07B /* SnapCarousel.swift */,
+				FB992BC827B65C4F0028D07B /* Assets.xcassets */,
+				FB34157127D0C3D60043F689 /* OnBoarding.swift */,
+				FB992BCA27B65C4F0028D07B /* Preview Content */,
+				FB682D7C27C6320D00BC59F6 /* progress.json */,
+			);
+			path = MentisMeditate;
+			sourceTree = "<group>";
+		};
+		FB992BCA27B65C4F0028D07B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FB992BCB27B65C4F0028D07B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FBB2428F27D6920600E1D32F /* Exawer_audio */ = {
+			isa = PBXGroup;
+			children = (
+				FB388BE427D8A083009ACBF9 /* 5 SENSES DRILL eng 3min.m4a */,
+				FB388BE927D8A083009ACBF9 /* 5 SENSES DRILL ita 3min.m4a */,
+				FB388BE627D8A083009ACBF9 /* ENHANCED FOCUS eng 3min.m4a */,
+				FB388BE827D8A083009ACBF9 /* ENHANCED FOCUS eng 5min.m4a */,
+				FB388BE127D8A083009ACBF9 /* ENHANCED FOCUS ita 3min.m4a */,
+				FB388BE527D8A083009ACBF9 /* ENHANCED FOCUS ita 5min.m4a */,
+				FB388BE227D8A083009ACBF9 /* HYPER MOTIVATION eng 5min.m4a */,
+				FB388BE727D8A083009ACBF9 /* HYPER MOTIVATION ita 5min.m4a */,
+				FB388BE027D8A083009ACBF9 /* SELF-CONFIDENCE BOOST eng 7min.m4a */,
+				FB388BE327D8A083009ACBF9 /* SELF-CONFIDENCE BOOST ita 7min.m4a */,
+				FB388BD527D8A064009ACBF9 /* RELAXATION BREATHING eng 5min.m4a */,
+				FB388BD127D8A063009ACBF9 /* RELAXATION BREATHING ita 5min.m4a */,
+				FB388BD427D8A064009ACBF9 /* SELF-CONFIDENCE BOOST eng 3min.m4a */,
+				FB388BD727D8A064009ACBF9 /* SELF-CONFIDENCE BOOST ita 3min.m4a */,
+				FB388BD327D8A063009ACBF9 /* SOOTHING MOMENT eng 3min.m4a */,
+				FB388BD627D8A064009ACBF9 /* SOOTHING MOMENT eng 5min.m4a */,
+				FB388BD027D8A063009ACBF9 /* SOOTHING MOMENT ita 3min.m4a */,
+				FB388BD227D8A063009ACBF9 /* SOOTHING MOMENT ita 5min.m4a */,
+			);
+			path = Exawer_audio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB98A01027D20CBD001CC5B8 /* widget_meExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB98A01D27D20CBF001CC5B8 /* Build configuration list for PBXNativeTarget "widget_meExtension" */;
+			buildPhases = (
+				FB98A00D27D20CBD001CC5B8 /* Sources */,
+				FB98A00E27D20CBD001CC5B8 /* Frameworks */,
+				FB98A00F27D20CBD001CC5B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget_meExtension;
+			productName = widget_meExtension;
+			productReference = FB98A01127D20CBD001CC5B8 /* widget_meExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FB992BC027B65C4E0028D07B /* MentisMeditate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB992BCF27B65C4F0028D07B /* Build configuration list for PBXNativeTarget "MentisMeditate" */;
+			buildPhases = (
+				FB992BBD27B65C4E0028D07B /* Sources */,
+				FB992BBE27B65C4E0028D07B /* Frameworks */,
+				FB992BBF27B65C4E0028D07B /* Resources */,
+				FB98A00927D20C65001CC5B8 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB98A01B27D20CBF001CC5B8 /* PBXTargetDependency */,
+			);
+			name = MentisMeditate;
+			packageProductDependencies = (
+				FB34156F27D0B6E30043F689 /* Introspect */,
+			);
+			productName = MentisMeditate;
+			productReference = FB992BC127B65C4E0028D07B /* MentisMeditate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB992BB927B65C4E0028D07B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					FB98A01027D20CBD001CC5B8 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					FB992BC027B65C4E0028D07B = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = FB992BBC27B65C4E0028D07B /* Build configuration list for PBXProject "MentisMeditate" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				it,
+				"en-GB",
+			);
+			mainGroup = FB992BB827B65C4E0028D07B;
+			packageReferences = (
+				FB34156E27D0B6E30043F689 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
+			productRefGroup = FB992BC227B65C4E0028D07B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB992BC027B65C4E0028D07B /* MentisMeditate */,
+				FB98A01027D20CBD001CC5B8 /* widget_meExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB98A00F27D20CBD001CC5B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB98A01827D20CBF001CC5B8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB992BBF27B65C4E0028D07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB388BD927D8A064009ACBF9 /* RELAXATION BREATHING ita 5min.m4a in Resources */,
+				FB388BED27D8A083009ACBF9 /* SELF-CONFIDENCE BOOST ita 7min.m4a in Resources */,
+				FB388BDB27D8A064009ACBF9 /* SOOTHING MOMENT eng 3min.m4a in Resources */,
+				FB992BCC27B65C4F0028D07B /* Preview Assets.xcassets in Resources */,
+				FB388BF327D8A083009ACBF9 /* 5 SENSES DRILL ita 3min.m4a in Resources */,
+				FB388BEA27D8A083009ACBF9 /* SELF-CONFIDENCE BOOST eng 7min.m4a in Resources */,
+				FB388BEB27D8A083009ACBF9 /* ENHANCED FOCUS ita 3min.m4a in Resources */,
+				FB388BDC27D8A064009ACBF9 /* SELF-CONFIDENCE BOOST eng 3min.m4a in Resources */,
+				FB388BEC27D8A083009ACBF9 /* HYPER MOTIVATION eng 5min.m4a in Resources */,
+				FB388BDA27D8A064009ACBF9 /* SOOTHING MOMENT ita 5min.m4a in Resources */,
+				FB388BCF27D89FE0009ACBF9 /* sunset1.m4a in Resources */,
+				FB388BF227D8A083009ACBF9 /* ENHANCED FOCUS eng 5min.m4a in Resources */,
+				FB388BDF27D8A064009ACBF9 /* SELF-CONFIDENCE BOOST ita 3min.m4a in Resources */,
+				FB992BE027B6821E0028D07B /* maria-nazionale-1.jpg in Resources */,
+				FB682D7D27C6320D00BC59F6 /* progress.json in Resources */,
+				FB388BDD27D8A064009ACBF9 /* RELAXATION BREATHING eng 5min.m4a in Resources */,
+				FB388BCB27D89FC6009ACBF9 /* pioggia1.m4a in Resources */,
+				FB388BDE27D8A064009ACBF9 /* SOOTHING MOMENT eng 5min.m4a in Resources */,
+				FB388BEF27D8A083009ACBF9 /* ENHANCED FOCUS ita 5min.m4a in Resources */,
+				FB992BC927B65C4F0028D07B /* Assets.xcassets in Resources */,
+				FB388BF027D8A083009ACBF9 /* ENHANCED FOCUS eng 3min.m4a in Resources */,
+				FB388BD827D8A064009ACBF9 /* SOOTHING MOMENT ita 3min.m4a in Resources */,
+				FB388BCA27D89FC6009ACBF9 /* londra1.m4a in Resources */,
+				FB388BEE27D8A083009ACBF9 /* 5 SENSES DRILL eng 3min.m4a in Resources */,
+				FB388BCE27D89FE0009ACBF9 /* mare1.m4a in Resources */,
+				FB59E17827D76F09006878BE /* Localizable.strings in Resources */,
+				FB388BF127D8A083009ACBF9 /* HYPER MOTIVATION ita 5min.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB98A00D27D20CBD001CC5B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB98A01627D20CBD001CC5B8 /* widget_me.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB992BBD27B65C4E0028D07B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB992BDE27B6636B0028D07B /* SnapCarousel.swift in Sources */,
+				784F778B27C7A04600B4C07C /* DataSource.swift in Sources */,
+				FB612E2227BBD0730097C63C /* Background_music.swift in Sources */,
+				FB96F93427CCD821000AF6F3 /* Meditation.swift in Sources */,
+				FB34157227D0C3D60043F689 /* OnBoarding.swift in Sources */,
+				FB682D7527C4D70C00BC59F6 /* PathsInfo.swift in Sources */,
+				FB682D7B27C630CC00BC59F6 /* UseProgress.swift in Sources */,
+				FB612E2C27BBD1360097C63C /* Journey.swift in Sources */,
+				FB57A83927BE5306007E0A65 /* Breathing.swift in Sources */,
+				FB992BC527B65C4E0028D07B /* MentisMeditateApp.swift in Sources */,
+				FB682D7727C4F09D00BC59F6 /* CardSheet.swift in Sources */,
+				784F778127C795B400B4C07C /* Player_audio.swift in Sources */,
+				FB682D7927C54A4400BC59F6 /* Pathdetails.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB98A01B27D20CBF001CC5B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB98A01027D20CBD001CC5B8 /* widget_meExtension */;
+			targetProxy = FB98A01A27D20CBF001CC5B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB59E17627D76F09006878BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB59E17727D76F09006878BE /* it */,
+				FB388BF527D8B98C009ACBF9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB98A01E27D20CBF001CC5B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C598U6DJ3G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget_me/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget_me;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "francesco.MentisMeditate.widget-me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FB98A01F27D20CBF001CC5B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C598U6DJ3G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget_me/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget_me;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "francesco.MentisMeditate.widget-me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FB992BCD27B65C4F0028D07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB992BCE27B65C4F0028D07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB992BD027B65C4F0028D07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MentisMeditate/Preview Content\"";
+				DEVELOPMENT_TEAM = C598U6DJ3G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MentisMeditate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mentis;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.MentisMeditate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FB992BD127B65C4F0028D07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MentisMeditate/Preview Content\"";
+				DEVELOPMENT_TEAM = C598U6DJ3G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MentisMeditate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mentis;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.MentisMeditate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB98A01D27D20CBF001CC5B8 /* Build configuration list for PBXNativeTarget "widget_meExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB98A01E27D20CBF001CC5B8 /* Debug */,
+				FB98A01F27D20CBF001CC5B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB992BBC27B65C4E0028D07B /* Build configuration list for PBXProject "MentisMeditate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB992BCD27B65C4F0028D07B /* Debug */,
+				FB992BCE27B65C4F0028D07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB992BCF27B65C4F0028D07B /* Build configuration list for PBXNativeTarget "MentisMeditate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB992BD027B65C4F0028D07B /* Debug */,
+				FB992BD127B65C4F0028D07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB34156E27D0B6E30043F689 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB34156F27D0B6E30043F689 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB34156E27D0B6E30043F689 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FB992BB927B65C4E0028D07B /* Project object */;
+}
