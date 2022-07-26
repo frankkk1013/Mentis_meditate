@@ -17,6 +17,8 @@ An app for students to guide them through different meditation paths alongside t
    
    <img src="https://github.com/frankkk1013/Mentis_meditate/blob/e3a684f83660da207c15ef10eb6feba5520caba6/media/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2015.32.16.png" width="300">
 </div>
+
+### Exercises
 <div>
 
    <img src="https://github.com/frankkk1013/Mentis_meditate/blob/e3a684f83660da207c15ef10eb6feba5520caba6/media/Simulator_Screen_Recording_-_iPhone_11_-_2022-07-26_at_15_30_52_AdobeExpress.gif" width="300">
